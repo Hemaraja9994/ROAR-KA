@@ -5,19 +5,28 @@
   --font-sans: "Source Sans 3", "Noto Sans Kannada", "Noto Sans Devanagari", ui-sans-serif, system-ui, sans-serif;
   --font-word: "Literata", "Noto Serif Kannada", "Noto Serif Devanagari", ui-serif, serif;
 
-  --color-paper: #f4efe4;
-  --color-paper-2: #ebe4d6;
-  --color-ink: #1a1714;
-  --color-ink-soft: #3d3832;
-  --color-dust: #8a8175;
-  --color-rule: #d9d0c2;
-  --color-teal: #1b5854;
-  --color-teal-2: #123e3b;
-  --color-foam: #e7f0ee;
-  --color-surface: #fffdf8;
-  --color-refer: #8f3d2b;
-  --color-watch: #8a5a20;
-  --color-typical: #2f6b4f;
+  --color-navy: #0b1f4d;
+  --color-navy-2: #071433;
+  --color-coral: #f15a3b;
+  --color-coral-2: #d4452a;
+  --color-magenta: #c43b8c;
+  --color-purple: #5b2fa0;
+  --color-paper: #f7f3ee;
+  --color-paper-2: #ede7df;
+  --color-ink: #0b1f4d;
+  --color-ink-soft: #3d4764;
+  --color-dust: #7b8396;
+  --color-rule: #e5ded6;
+  --color-surface: #ffffff;
+  --color-flag-low: #efe6f8;
+  --color-flag-mid: #e4e8f4;
+  --color-flag-high: #fde8e2;
+  --color-typical: #5b2fa0;
+  --color-watch: #0b1f4d;
+  --color-refer: #d4452a;
+  --color-teal: #0b1f4d;
+  --color-teal-2: #071433;
+  --color-foam: #efe6f8;
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -25,9 +34,14 @@
   --radius-xl: 24px;
 
   --shadow-border:
-    0px 0px 0px 1px rgba(26, 23, 20, 0.06),
-    0px 1px 2px -1px rgba(26, 23, 20, 0.06),
-    0px 2px 4px 0px rgba(26, 23, 20, 0.04);
+    0px 0px 0px 1px rgba(11, 31, 77, 0.06),
+    0px 8px 24px -12px rgba(11, 31, 77, 0.18);
+
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-quick: 150ms;
+  --motion-fast: 250ms;
+  --motion-slow: 400ms;
+  --motion-emphasis: 560ms;
 }
 
 @layer base {
@@ -68,18 +82,9 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-teal);
+    outline: 2px solid var(--color-coral);
     outline-offset: 3px;
   }
-}
-
-.ruled {
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent,
-    transparent 27px,
-    color-mix(in oklab, var(--color-ink) 6%, transparent) 28px
-  );
 }
 
 .word-kn {
@@ -94,6 +99,114 @@
   font-family: var(--font-word);
 }
 
+.ribbon-wrap {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.ribbon-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    var(--color-navy) 0%,
+    color-mix(in oklab, var(--color-navy) 82%, transparent) 38%,
+    transparent 72%
+  );
+}
+
+.ribbon {
+  position: absolute;
+  height: 140%;
+  width: 140%;
+  right: -18%;
+  top: -12%;
+  opacity: 0.92;
+  transform-origin: 80% 20%;
+  animation: ribbon-drift 18s var(--ease-smooth-out) infinite alternate;
+}
+
+.ribbon-b {
+  animation-duration: 22s;
+  animation-delay: -6s;
+  opacity: 0.7;
+}
+
+@keyframes ribbon-drift {
+  from {
+    transform: translate3d(-4%, 2%, 0) rotate(-6deg);
+  }
+  to {
+    transform: translate3d(3%, -3%, 0) rotate(4deg);
+  }
+}
+
+.enter > * {
+  animation: rise var(--motion-emphasis) var(--ease-smooth-out) both;
+}
+
+.enter > *:nth-child(1) {
+  animation-delay: 0ms;
+}
+.enter > *:nth-child(2) {
+  animation-delay: 70ms;
+}
+.enter > *:nth-child(3) {
+  animation-delay: 140ms;
+}
+.enter > *:nth-child(4) {
+  animation-delay: 210ms;
+}
+.enter > *:nth-child(5) {
+  animation-delay: 280ms;
+}
+.enter > *:nth-child(6) {
+  animation-delay: 350ms;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.word-swap {
+  animation: word-in var(--motion-slow) var(--ease-smooth-out) both;
+}
+
+@keyframes word-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.lift {
+  transition:
+    transform var(--motion-fast) var(--ease-smooth-out),
+    box-shadow var(--motion-fast) var(--ease-smooth-out);
+}
+
+.lift:hover {
+  transform: translateY(-3px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -102,11 +215,16 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+
+  .lift:hover {
+    transform: none;
+  }
 }
 
 @media print {
   nav,
-  .no-print {
+  .no-print,
+  .ribbon-wrap {
     display: none !important;
   }
   body {

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input, Label, Select } from "@/components/ui/input";
+import { PageHero } from "@/components/ribbons";
 import { KARNATAKA_DISTRICTS, HOME_LANGUAGES } from "@/lib/districts";
 import { t } from "@/lib/i18n";
 import { useApp } from "@/lib/store";
@@ -79,10 +80,9 @@ function ScreenForm() {
   }
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-8">
-      <h1 className="font-display text-3xl font-medium">{t(uiLang, "screen.title")}</h1>
-      <p className="mt-2 text-ink-soft">{t(uiLang, "screen.lead")}</p>
-
+    <div>
+      <PageHero kicker={t(uiLang, "app.place")} title={t(uiLang, "screen.title")} lead={t(uiLang, "screen.lead")} />
+      <main className="enter mx-auto max-w-3xl px-4 py-8">
       <Card className="mt-6">
         <h2 className="font-display text-xl font-medium">{t(uiLang, "screen.teacher")}</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -217,7 +217,7 @@ function ScreenForm() {
         <label className="mt-5 flex items-start gap-3 text-sm text-ink-soft">
           <input
             type="checkbox"
-            className="mt-1 size-4 accent-teal"
+            className="mt-1 size-4 accent-coral"
             checked={consent}
             onChange={(e) => setConsent(e.target.checked)}
           />
@@ -236,5 +236,6 @@ function ScreenForm() {
         </Button>
       </div>
     </main>
+    </div>
   );
 }

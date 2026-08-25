@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as InterpretRouteImport } from './routes/interpret'
 import { Route as ProtocolRouteImport } from './routes/protocol'
 import { Route as RecordsRouteImport } from './routes/records'
 import { Route as ScreenRouteImport } from './routes/screen'
@@ -25,6 +26,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InterpretRoute = InterpretRouteImport.update({
+  id: '/interpret',
+  path: '/interpret',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProtocolRoute = ProtocolRouteImport.update({
@@ -56,6 +62,7 @@ const ResultsIdRoute = ResultsIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/interpret': typeof InterpretRoute
   '/protocol': typeof ProtocolRoute
   '/records': typeof RecordsRoute
   '/screen': typeof ScreenRoute
@@ -65,6 +72,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/interpret': typeof InterpretRoute
   '/protocol': typeof ProtocolRoute
   '/records': typeof RecordsRoute
   '/screen': typeof ScreenRoute
@@ -75,6 +83,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/interpret': typeof InterpretRoute
   '/protocol': typeof ProtocolRoute
   '/records': typeof RecordsRoute
   '/screen': typeof ScreenRoute
@@ -86,6 +95,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/interpret'
     | '/protocol'
     | '/records'
     | '/screen'
@@ -95,6 +105,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/interpret'
     | '/protocol'
     | '/records'
     | '/screen'
@@ -104,6 +115,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/interpret'
     | '/protocol'
     | '/records'
     | '/screen'
@@ -114,6 +126,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  InterpretRoute: typeof InterpretRoute
   ProtocolRoute: typeof ProtocolRoute
   RecordsRoute: typeof RecordsRoute
   ScreenRoute: typeof ScreenRoute
@@ -135,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/interpret': {
+      id: '/interpret'
+      path: '/interpret'
+      fullPath: '/interpret'
+      preLoaderRoute: typeof InterpretRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/protocol': {
@@ -178,6 +198,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  InterpretRoute: InterpretRoute,
   ProtocolRoute: ProtocolRoute,
   RecordsRoute: RecordsRoute,
   ScreenRoute: ScreenRoute,

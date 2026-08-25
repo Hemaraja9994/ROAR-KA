@@ -9,7 +9,7 @@ import { Button } from "./ui/button";
 
 function Mark() {
   return (
-    <span className="grid size-8 place-items-center rounded-sm bg-teal font-display text-lg font-medium text-paper">
+    <span className="grid size-8 place-items-center rounded-md bg-coral font-display text-lg font-medium text-surface">
       ಕ
     </span>
   );
@@ -33,6 +33,7 @@ export function AppShell({ children }: { children: ReactNode }) {
     { to: "/screen", label: t(uiLang, "nav.screen") },
     { to: "/records", label: t(uiLang, "nav.records") },
     { to: "/protocol", label: t(uiLang, "nav.protocol") },
+    { to: "/interpret", label: t(uiLang, "nav.interpret") },
     { to: "/about", label: t(uiLang, "nav.about") },
   ] as const;
 
@@ -40,37 +41,35 @@ export function AppShell({ children }: { children: ReactNode }) {
 
   return (
     <div className="min-h-dvh bg-paper text-ink">
-      <nav className="no-print sticky top-0 z-30 border-b border-rule/80 bg-paper/90 backdrop-blur-sm">
+      <nav className="no-print sticky top-0 z-30 bg-navy text-surface">
         <div className="mx-auto flex max-w-5xl items-center gap-3 px-4 py-3">
           <Link to="/" className="flex items-center gap-2.5">
             <Mark />
-            <span className="font-display text-lg font-medium tracking-tight">
-              {t(uiLang, "app.name")}
-            </span>
+            <span className="font-display text-lg font-medium tracking-tight">{t(uiLang, "app.name")}</span>
           </Link>
-          <div className="ml-auto hidden items-center gap-1 md:flex">
+          <div className="ml-auto hidden items-center gap-0.5 lg:flex">
             {links.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 className={cn(
-                  "rounded-sm px-3 py-2 text-sm text-ink-soft transition-colors duration-150 hover:text-ink",
-                  pathname === l.to && "bg-paper-2 text-ink",
+                  "rounded-md px-2.5 py-2 text-sm text-surface/75 transition-colors duration-150 hover:text-surface",
+                  pathname === l.to && "bg-surface/10 text-surface",
                 )}
               >
                 {l.label}
               </Link>
             ))}
           </div>
-          <div className="ml-auto flex items-center gap-1 md:ml-3">
+          <div className="ml-auto flex items-center gap-1 lg:ml-3">
             {LANGS.map((l) => (
               <button
                 key={l}
                 type="button"
                 onClick={() => setUiLang(l)}
                 className={cn(
-                  "h-9 min-w-9 rounded-sm px-2 text-xs font-medium uppercase tracking-wide",
-                  uiLang === l ? "bg-teal text-paper" : "text-dust hover:bg-paper-2 hover:text-ink",
+                  "h-9 min-w-9 rounded-md px-2 text-xs font-medium uppercase tracking-wide transition-colors duration-150",
+                  uiLang === l ? "bg-coral text-surface" : "text-surface/70 hover:bg-surface/10 hover:text-surface",
                 )}
                 aria-pressed={uiLang === l}
               >
@@ -80,7 +79,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             <Button
               variant="ghost"
               size="sm"
-              className="md:hidden"
+              className="text-surface hover:bg-surface/10 hover:text-surface lg:hidden"
               onClick={() => setOpen((v) => !v)}
               aria-label="Menu"
             >
@@ -89,12 +88,15 @@ export function AppShell({ children }: { children: ReactNode }) {
           </div>
         </div>
         {open ? (
-          <div className="border-t border-rule px-4 py-2 md:hidden">
+          <div className="border-t border-surface/10 px-4 py-2 lg:hidden">
             {links.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
-                className="block rounded-sm px-3 py-3 text-sm text-ink-soft"
+                className={cn(
+                  "block rounded-md px-3 py-3 text-sm text-surface/80",
+                  pathname === l.to && "bg-surface/10 text-surface",
+                )}
               >
                 {l.label}
               </Link>

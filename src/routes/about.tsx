@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Card } from "@/components/ui/card";
+import { PageHero } from "@/components/ribbons";
 import { t } from "@/lib/i18n";
 import { useApp } from "@/lib/store";
 
@@ -8,9 +9,9 @@ export const Route = createFileRoute("/about")({ component: AboutPage });
 function AboutPage() {
   const uiLang = useApp((s) => s.uiLang);
   return (
-    <main className="mx-auto max-w-3xl px-4 py-8">
-      <h1 className="font-display text-3xl font-medium">{t(uiLang, "about.title")}</h1>
-
+    <div>
+      <PageHero kicker={t(uiLang, "app.place")} title={t(uiLang, "about.title")} />
+      <main className="enter mx-auto max-w-3xl px-4 py-8">
       <Card className="mt-6">
         <h2 className="font-display text-xl font-medium">{t(uiLang, "about.frame")}</h2>
         <p className="mt-3 text-sm leading-relaxed text-ink-soft">{t(uiLang, "about.frameBody")}</p>
@@ -18,11 +19,11 @@ function AboutPage() {
 
       <Card className="mt-4">
         <h2 className="font-display text-xl font-medium">{t(uiLang, "about.cite")}</h2>
-        <blockquote className="mt-3 border-l-2 border-teal pl-4 text-sm leading-relaxed text-ink-soft">
+        <blockquote className="mt-3 border-l-2 border-coral pl-4 text-sm leading-relaxed text-ink-soft">
           Ma, W. A., Richie-Halford, A., Burkhardt, A. K., Kanopka, K., Chou, C., Domingue, B. W.,
           & Yeatman, J. D. (2025). ROAR-CAT: Rapid Online Assessment of Reading ability with
           Computerized Adaptive Testing. <em>Behavior Research Methods, 57</em>(1), 1–17.{" "}
-          <a className="text-teal underline" href="https://doi.org/10.3758/s13428-024-02578-y">
+          <a className="text-coral underline" href="https://doi.org/10.3758/s13428-024-02578-y">
             doi.org/10.3758/s13428-024-02578-y
           </a>
         </blockquote>
@@ -47,5 +48,6 @@ function AboutPage() {
         <p className="mt-3 text-sm leading-relaxed text-ink-soft">{t(uiLang, "about.privacy")}</p>
       </Card>
     </main>
+    </div>
   );
 }

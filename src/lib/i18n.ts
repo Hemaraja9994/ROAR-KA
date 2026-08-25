@@ -9,6 +9,7 @@ const en = {
   "nav.records": "Records",
   "nav.protocol": "How to give",
   "nav.about": "Credits",
+  "nav.interpret": "Interpret",
   "home.kicker": "Kannada · English · Hindi",
   "home.title": "Spot word-reading difficulty in a few minutes.",
   "home.lead":
@@ -32,6 +33,11 @@ const en = {
     "This is a brief screening, not a diagnosis of dyslexia or specific learning disability.",
   "home.credit":
     "Frame and CAT method after Ma, Richie-Halford, Burkhardt, Kanopka, Chou, Domingue & Yeatman (2025), ROAR-CAT, and jsCAT (Yeatman Lab). Karnataka language adaptation for research by Ms. Rashmi, Senior Speech Language Pathologist, Bengaluru.",
+  "home.interpretCta": "How to read a result",
+  "home.flagTitle": "Three classroom flags",
+  "home.min": "About 3 minutes",
+  "home.langs": "Three languages",
+  "home.device": "Stays on this device",
   "screen.title": "New screening",
   "screen.lead": "Fill teacher and child details, then hand the screen to the child.",
   "screen.teacher": "Teacher and school",
@@ -115,7 +121,75 @@ const en = {
     "Pilot tool. Kannada and Hindi items are newly written and not yet locally normed. Bands are provisional pending Ms. Rashmi’s validation sample. Not official Stanford ROAR.",
   "results.thetaNote":
     "θ is an IRT ability score (about −3 to +3). Higher means stronger silent word recognition. SE is the standard error — smaller is more precise.",
-  "records.title": "Records on this device",
+  "results.means": "What this means",
+  "results.thisWeek": "This week in class",
+  "results.sayChild": "Say this to the child",
+  "results.sayParent": "Say this to parents",
+  "results.dontSay": "Please do not say",
+  "results.guide": "Open the full teacher guide",
+  "interpret.title": "How to interpret the flag",
+  "interpret.lead":
+    "ROAR-KA gives a classroom flag, not a medical label. Read it with the child out of earshot. Then decide what to do this week, and what to say at home.",
+  "interpret.kicker": "Teacher guide",
+  "interpret.notDx":
+    "Typical, Watch and Refer are screening flags. None of them means the child has dyslexia, a learning disability, or a low IQ.",
+  "interpret.flags": "The three flags",
+  "interpret.typicalDo":
+    "Keep ordinary reading instruction. Praise effort. Recheck only if classroom reading later looks stuck.",
+  "interpret.typicalChild":
+    "“You tried every word. That helps us know how reading is going. Back to class.”",
+  "interpret.typicalParent":
+    "“On this short word screen, recognition looked in the expected range. We will keep usual reading practice at school.”",
+  "interpret.typicalDont":
+    "Do not tell the child they are a “top reader” from this one screen. It is only silent word recognition.",
+  "interpret.watchDo":
+    "Give extra decoding and sound–letter practice, 10 minutes a day, in the language of instruction. Rescreen in 8–12 weeks. Tell the special educator if concern stays.",
+  "interpret.watchChild":
+    "“Some words were tricky. We will practise a little each day. You did not fail.”",
+  "interpret.watchParent":
+    "“The screen showed some difficulty with word recognition. We will give extra practice and look again in about two months. This is not a diagnosis.”",
+  "interpret.watchDont":
+    "Do not stop the child from other subjects. Do not announce a learning-disability label in the staff room.",
+  "interpret.referDo":
+    "Refer for a full reading and language assessment (special educator and/or speech-language pathologist). Keep the child in class with extra support while you wait. Share the printed report.",
+  "interpret.referChild":
+    "“This screen helps us know who needs more help with words. A teacher who looks at reading will meet you. You worked hard.”",
+  "interpret.referParent":
+    "“This brief screen suggests a full reading check would help. It is not a diagnosis of dyslexia. Please meet the special educator / SLP. Meanwhile we will support reading in class.”",
+  "interpret.referDont":
+    "Do not tell the family “your child has dyslexia.” Do not hold the child back a year on this flag alone.",
+  "interpret.incDo":
+    "Repeat on another day in a quieter space. If the child was unwell, wait. If it happens twice, treat as Watch.",
+  "interpret.sayTitle": "Words that help",
+  "interpret.doTitle": "What you do next",
+  "interpret.thetaTitle": "The number θ, in plain language",
+  "interpret.thetaBody":
+    "θ (theta) is a compact score of silent word recognition, usually between about −3 and +3. Zero is average for this item bank. Higher is stronger. The flag already translates the number for the classroom — you do not need to explain θ to parents.",
+  "interpret.seTitle": "Precision (SE)",
+  "interpret.seBody":
+    "SE is how unsure the computer still is. Below about 0.40 is tight enough for this pilot. A large SE with few items often becomes Inconclusive — repeat rather than refer.",
+  "interpret.slowTitle": "Slow but mostly correct",
+  "interpret.slowBody":
+    "The child may know the words but tire or hesitate. Note “slow, careful” in teacher notes. Still follow the flag. Extra time in class is kind; do not rush the next screen.",
+  "interpret.guessTitle": "Fast taps, many errors",
+  "interpret.guessBody":
+    "Note “guessing / tapping without looking.” Repeat once after a rest if you think they did not understand Real vs Made-up. Do not coach the answers.",
+  "interpret.whenTitle": "When to screen again",
+  "interpret.whenBody":
+    "Watch: 8–12 weeks after extra practice. Refer: after the specialist assessment, or if the family could not attend. Typical: not needed this term unless classroom reading drops. Never screen a child who is unwell, hungry, or very upset.",
+  "interpret.matrixTitle": "How serious is the flag?",
+  "interpret.matrixLead":
+    "Impact on the child’s reading path — not a medical risk chart. Use it to choose your next step, not to rank children in the class.",
+  "interpret.col0": "Keep usual teaching",
+  "interpret.col1": "Add practice, watch",
+  "interpret.col2": "Needs specialist look",
+  "interpret.col3": "Urgent full assessment",
+  "interpret.row1": "One brief screen",
+  "interpret.row2": "Screen + class concern",
+  "interpret.row3": "Screen + history of struggle",
+  "interpret.shortTypical": "Typical",
+  "interpret.shortWatch": "Watch",
+  "interpret.shortRefer": "Refer",  "records.title": "Records on this device",
   "records.empty": "No screenings saved yet.",
   "records.export": "Export CSV",
   "records.clear": "Clear all",
@@ -180,6 +254,7 @@ const kn: Record<Key, string> = {
   "nav.records": "ದಾಖಲೆಗಳು",
   "nav.protocol": "ಹೇಗೆ ನಡೆಸುವುದು",
   "nav.about": "ಮಾನ್ಯತೆ",
+  "nav.interpret": "ಅರ್ಥ",
   "home.kicker": "ಕನ್ನಡ · ಇಂಗ್ಲಿಷ್ · ಹಿಂದಿ",
   "home.title": "ಪದ ಓದುವ ತೊಂದರೆಯನ್ನು ಕೆಲವು ನಿಮಿಷಗಳಲ್ಲಿ ಗುರುತಿಸಿ.",
   "home.lead":
@@ -202,6 +277,11 @@ const kn: Record<Key, string> = {
   "home.notDx": "ಇದು ಸಂಕ್ಷಿಪ್ತ ಪರೀಕ್ಷೆ ಮಾತ್ರ; ಡಿಸ್ಲೆಕ್ಸಿಯಾ ಅಥವಾ ಕಲಿಕಾ ನ್ಯೂನತೆಯ ರೋಗನಿರ್ಣಯವಲ್ಲ.",
   "home.credit":
     "ಚೌಕಟ್ಟು: Ma ಮತ್ತು ಇತರರು (2025) ROAR-CAT ಹಾಗೂ jsCAT (Yeatman Lab). ಕರ್ನಾಟಕ ಭಾಷಾ ರೂಪಾಂತರ: ಹಿರಿಯ ವಾಕ್-ಭಾಷಾ ತಜ್ಞೆ ರಶ್ಮಿ, ಬೆಂಗಳೂರು.",
+  "home.interpretCta": "ಫಲಿತಾಂಶವನ್ನು ಹೇಗೆ ಓದುವುದು",
+  "home.flagTitle": "ಮೂರು ತರಗತಿ ಸೂಚನೆಗಳು",
+  "home.min": "ಸುಮಾರು ೩ ನಿಮಿಷ",
+  "home.langs": "ಮೂರು ಭಾಷೆಗಳು",
+  "home.device": "ಈ ಸಾಧನದಲ್ಲಿಯೇ",
   "screen.title": "ಹೊಸ ಪರೀಕ್ಷೆ",
   "screen.lead": "ಶಿಕ್ಷಕ ಮತ್ತು ಮಗುವಿನ ವಿವರ ತುಂಬಿ, ನಂತರ ತೆರೆಯನ್ನು ಮಗುವಿಗೆ ನೀಡಿ.",
   "screen.teacher": "ಶಿಕ್ಷಕ ಮತ್ತು ಶಾಲೆ",
@@ -284,7 +364,75 @@ const kn: Record<Key, string> = {
     "ಪೈಲಟ್ ಸಾಧನ. ಕನ್ನಡ ಮತ್ತು ಹಿಂದಿ ಪದಗಳು ಹೊಸವು; ಸ್ಥಳೀಯ ಮಾನದಂಡ ಬಾಕಿ. ಸೂಚನೆಗಳು ತಾತ್ಕಾಲಿಕ. ಅಧಿಕೃತ Stanford ROAR ಅಲ್ಲ.",
   "results.thetaNote":
     "θ ಎಂಬುದು ಸಾಮರ್ಥ್ಯ ಅಂಕ (−೩ ರಿಂದ +೩). ಹೆಚ್ಚಿದರೆ ಮೌನ ಪದ ಗುರುತಿಸುವಿಕೆ ಉತ್ತಮ. SE ಚಿಕ್ಕದಾದರೆ ನಿಖರ.",
-  "records.title": "ಈ ಸಾಧನದ ದಾಖಲೆಗಳು",
+  "results.means": "ಇದರ ಅರ್ಥ",
+  "results.thisWeek": "ಈ ವಾರ ತರಗತಿಯಲ್ಲಿ",
+  "results.sayChild": "ಮಗುವಿಗೆ ಹೀಗೆ ಹೇಳಿ",
+  "results.sayParent": "ಪೋಷಕರಿಗೆ ಹೀಗೆ ಹೇಳಿ",
+  "results.dontSay": "ಇದನ್ನು ಹೇಳಬೇಡಿ",
+  "results.guide": "ಪೂರ್ಣ ಶಿಕ್ಷಕರ ಮಾರ್ಗದರ್ಶಿ",
+  "interpret.title": "ಸೂಚನೆಯನ್ನು ಹೇಗೆ ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು",
+  "interpret.lead":
+    "ROAR-KA ತರಗತಿ ಸೂಚನೆ ನೀಡುತ್ತದೆ, ವೈದ್ಯಕೀಯ ಲೇಬಲ್ ಅಲ್ಲ. ಮಗುವಿನ ಕಿವಿಯಿಂದ ದೂರ ಓದಿ. ನಂತರ ಈ ವಾರ ಏನು ಮಾಡುವುದು, ಮನೆಯಲ್ಲಿ ಏನು ಹೇಳುವುದು ಎಂದು ನಿರ್ಧರಿಸಿ.",
+  "interpret.kicker": "ಶಿಕ್ಷಕರ ಮಾರ್ಗದರ್ಶಿ",
+  "interpret.notDx":
+    "ಸಾಮಾನ್ಯ, ಗಮನಿಸಿ, ಕಳುಹಿಸಿ — ಇವು ಪರೀಕ್ಷಾ ಸೂಚನೆಗಳು. ಇವುಗಳಿಂದ ಡಿಸ್ಲೆಕ್ಸಿಯಾ, ಕಲಿಕಾ ನ್ಯೂನತೆ ಅಥವಾ ಕಡಿಮೆ ಬುದ್ಧಿಶಕ್ತಿ ಎಂದು ಹೇಳಲಾಗುವುದಿಲ್ಲ.",
+  "interpret.flags": "ಮೂರು ಸೂಚನೆಗಳು",
+  "interpret.typicalDo":
+    "ಸಾಮಾನ್ಯ ಓದು ಬೋಧನೆ ಮುಂದುವರಿಸಿ. ಪ್ರಯತ್ನವನ್ನು ಹೊಗಳಿ. ತರಗತಿ ಓದು ನಿಂತಂತೆ ಕಂಡರೆ ಮಾತ್ರ ಮತ್ತೆ ನೋಡಿ.",
+  "interpret.typicalChild":
+    "«ನೀನು ಪ್ರತಿ ಪದಕ್ಕೂ ಪ್ರಯತ್ನಿಸಿದೆ. ಓದು ಹೇಗಿದೆ ಎಂದು ತಿಳಿಯಲು ಇದು ಸಹಾಯ. ತರಗತಿಗೆ ಹಿಂತಿರುಗು.»",
+  "interpret.typicalParent":
+    "«ಈ ಸಂಕ್ಷಿಪ್ತ ಪದ ಪರೀಕ್ಷೆಯಲ್ಲಿ ಗುರುತಿಸುವಿಕೆ ನಿರೀಕ್ಷಿತ ವ್ಯಾಪ್ತಿಯಲ್ಲಿತ್ತು. ಶಾಲೆಯಲ್ಲಿ ಸಾಮಾನ್ಯ ಓದು ಅಭ್ಯಾಸ ಮುಂದುವರಿಯುತ್ತದೆ.»",
+  "interpret.typicalDont":
+    "ಒಂದೇ ಪರೀಕ್ಷೆಯಿಂದ «ನೀನು ಉತ್ತಮ ಓದುಗ» ಎಂದು ಹೇಳಬೇಡಿ. ಇದು ಮೌನ ಪದ ಗುರುತಿಸುವಿಕೆ ಮಾತ್ರ.",
+  "interpret.watchDo":
+    "ಬೋಧನಾ ಭಾಷೆಯಲ್ಲಿ ದಿನಕ್ಕೆ ೧೦ ನಿಮಿಷ ಹೆಚ್ಚುವರಿ ಧ್ವನಿ–ಅಕ್ಷರ ಅಭ್ಯಾಸ. ೮–೧೨ ವಾರದಲ್ಲಿ ಮತ್ತೆ ಪರೀಕ್ಷೆ. ಕಾಳಜಿ ಉಳಿದರೆ ವಿಶೇಷ ಶಿಕ್ಷಕರಿಗೆ ತಿಳಿಸಿ.",
+  "interpret.watchChild":
+    "«ಕೆಲವು ಪದಗಳು ಕಷ್ಟವಾಗಿದ್ದವು. ಪ್ರತಿದಿನ ಸ್ವಲ್ಪ ಅಭ್ಯಾಸ ಮಾಡುತ್ತೇವೆ. ನೀನು ವಿಫಲನಲ್ಲ.»",
+  "interpret.watchParent":
+    "«ಪದ ಗುರುತಿಸುವಿಕೆಯಲ್ಲಿ ಸ್ವಲ್ಪ ತೊಂದರೆ ಕಂಡಿತು. ಹೆಚ್ಚುವರಿ ಅಭ್ಯಾಸ ನೀಡಿ ಸುಮಾರು ಎರಡು ತಿಂಗಳಲ್ಲಿ ಮತ್ತೆ ನೋಡುತ್ತೇವೆ. ಇದು ರೋಗನಿರ್ಣಯವಲ್ಲ.»",
+  "interpret.watchDont":
+    "ಇತರ ವಿಷಯಗಳಿಂದ ಮಗುವನ್ನು ನಿಲ್ಲಿಸಬೇಡಿ. ಸಿಬ್ಬಂದಿ ಕೋಣೆಯಲ್ಲಿ ಕಲಿಕಾ ನ್ಯೂನತೆ ಲೇಬಲ್ ಹೇಳಬೇಡಿ.",
+  "interpret.referDo":
+    "ಪೂರ್ಣ ಓದು ಮತ್ತು ಭಾಷಾ ಪರೀಕ್ಷೆಗೆ ಕಳುಹಿಸಿ (ವಿಶೇಷ ಶಿಕ್ಷಕ / ವಾಕ್-ಭಾಷಾ ತಜ್ಞ). ಕಾಯುವಾಗ ತರಗತಿಯಲ್ಲಿ ಹೆಚ್ಚುವರಿ ಆಧಾರ. ಮುದ್ರಿತ ವರದಿ ಹಂಚಿ.",
+  "interpret.referChild":
+    "«ಪದಗಳಲ್ಲಿ ಯಾರಿಗೆ ಹೆಚ್ಚು ಸಹಾಯ ಬೇಕು ಎಂದು ತಿಳಿಯಲು ಇದು. ಓದು ನೋಡುವ ಶಿಕ್ಷಕರು ನಿನ್ನನ್ನು ಭೇಟಿಯಾಗುತ್ತಾರೆ. ನೀನು ಶ್ರಮಪಟ್ಟೆ.»",
+  "interpret.referParent":
+    "«ಈ ಸಂಕ್ಷಿಪ್ತ ಪರೀಕ್ಷೆ ಪೂರ್ಣ ಓದು ಪರಿಶೀಲನೆ ಸಹಾಯಕ ಎನ್ನುತ್ತದೆ. ಇದು ಡಿಸ್ಲೆಕ್ಸಿಯಾ ರೋಗನಿರ್ಣಯವಲ್ಲ. ವಿಶೇಷ ಶಿಕ್ಷಕ / ವಾಕ್-ಭಾಷಾ ತಜ್ಞರನ್ನು ಭೇಟಿಯಾಗಿ. ತರಗತಿಯಲ್ಲಿ ನಾವು ಆಧಾರ ನೀಡುತ್ತೇವೆ.»",
+  "interpret.referDont":
+    "ಕುಟುಂಬಕ್ಕೆ «ನಿಮ್ಮ ಮಗುವಿಗೆ ಡಿಸ್ಲೆಕ್ಸಿಯಾ ಇದೆ» ಎಂದು ಹೇಳಬೇಡಿ. ಈ ಸೂಚನೆಯಿಂದಲೇ ಒಂದು ವರ್ಷ ಹಿಂದೆ ಇಡಬೇಡಿ.",
+  "interpret.incDo":
+    "ಶಾಂತ ಸ್ಥಳದಲ್ಲಿ ಬೇರೆ ದಿನ ಮತ್ತೆ ನಡೆಸಿ. ಮಗು ಅಸ್ವಸ್ಥವಾಗಿದ್ದರೆ ಕಾಯಿರಿ. ಎರಡು ಬಾರಿ ಆದರೆ «ಗಮನಿಸಿ» ಎಂದು ನಡೆಸಿ.",
+  "interpret.sayTitle": "ಸಹಾಯಕ ಮಾತುಗಳು",
+  "interpret.doTitle": "ಮುಂದೆ ನೀವು ಮಾಡುವುದು",
+  "interpret.thetaTitle": "θ ಸಂಖ್ಯೆ — ಸರಳ ಭಾಷೆಯಲ್ಲಿ",
+  "interpret.thetaBody":
+    "θ (ಥೀಟಾ) ಮೌನ ಪದ ಗುರುತಿಸುವಿಕೆಯ ಸಂಕ್ಷಿಪ್ತ ಅಂಕ, ಸಾಮಾನ್ಯವಾಗಿ −೩ ರಿಂದ +೩. ಸೊನ್ನೆ ಈ ಪದಸಂಪುಟದ ಸರಾಸರಿ. ಹೆಚ್ಚಿದರೆ ಉತ್ತಮ. ಸೂಚನೆಯೇ ತರಗತಿಗೆ ಅನುವಾದ — ಪೋಷಕರಿಗೆ θ ವಿವರಿಸಬೇಕಾಗಿಲ್ಲ.",
+  "interpret.seTitle": "ನಿಖರತೆ (SE)",
+  "interpret.seBody":
+    "SE ಎಂದರೆ ಕಂಪ್ಯೂಟರ್ ಇನ್ನೂ ಎಷ್ಟು ಅನಿಶ್ಚಿತ. ಸುಮಾರು ೦.೪೦ಕ್ಕಿಂತ ಕಡಿಮೆ ಈ ಪೈಲಟ್‌ಗೆ ಸಾಕು. ಕಡಿಮೆ ಪದಗಳು + ದೊಡ್ಡ SE = ಅನಿಶ್ಚಿತ — ಕಳುಹಿಸುವ ಬದಲು ಮತ್ತೆ ನಡೆಸಿ.",
+  "interpret.slowTitle": "ನಿಧಾನ ಆದರೆ ಹೆಚ್ಚು ಸರಿ",
+  "interpret.slowBody":
+    "ಪದ ಗೊತ್ತಿರಬಹುದು, ಆದರೆ ಆಯಾಸ ಅಥವಾ ಹಿಂಜರಿಕೆ. ಟಿಪ್ಪಣಿಯಲ್ಲಿ «ನಿಧಾನ, ಜಾಗರೂಕ» ಬರೆಯಿರಿ. ಸೂಚನೆಯನ್ನು ಅನುಸರಿಸಿ. ಮುಂದಿನ ಪರೀಕ್ಷೆಯನ್ನು ಆತುರಪಡಿಸಬೇಡಿ.",
+  "interpret.guessTitle": "ವೇಗವಾಗಿ ಒತ್ತಿ, ಹೆಚ್ಚು ತಪ್ಪು",
+  "interpret.guessBody":
+    "«ನೋಡದೆ ಊಹೆ» ಎಂದು ಬರೆಯಿರಿ. ನಿಜ vs ಕಲ್ಪಿತ ಅರ್ಥವಾಗಿಲ್ಲ ಎನಿಸಿದರೆ ವಿಶ್ರಾಂತಿಯ ನಂತರ ಒಮ್ಮೆ ಮತ್ತೆ. ಉತ್ತರ ಹೇಳಬೇಡಿ.",
+  "interpret.whenTitle": "ಯಾವಾಗ ಮತ್ತೆ ಪರೀಕ್ಷೆ",
+  "interpret.whenBody":
+    "ಗಮನಿಸಿ: ಹೆಚ್ಚುವರಿ ಅಭ್ಯಾಸದ ೮–೧೨ ವಾರ ನಂತರ. ಕಳುಹಿಸಿ: ತಜ್ಞರ ಪರೀಕ್ಷೆಯ ನಂತರ, ಅಥವಾ ಕುಟುಂಬ ಬರಲಾಗದಿದ್ದರೆ. ಸಾಮಾನ್ಯ: ತರಗತಿ ಓದು ಇಳಿದರೆ ಹೊರತು ಈ ಅವಧಿಯಲ್ಲಿ ಬೇಡ. ಅಸ್ವಸ್ಥ, ಹಸಿವು, ಅತಿಯಾದ ಒತ್ತಡದ ಮಗುವಿಗೆ ನಡೆಸಬೇಡಿ.",
+  "interpret.matrixTitle": "ಸೂಚನೆ ಎಷ್ಟು ಗಂಭೀರ?",
+  "interpret.matrixLead":
+    "ಮಗುವಿನ ಓದಿನ ಮಾರ್ಗದ ಮೇಲಿನ ಪರಿಣಾಮ — ವೈದ್ಯಕೀಯ ಅಪಾಯ ಪಟ್ಟಿ ಅಲ್ಲ. ಮುಂದಿನ ಹೆಜ್ಜೆ ಆಯ್ಕೆಗೆ; ತರಗತಿಯಲ್ಲಿ ಮಕ್ಕಳನ್ನು ಶ್ರೇಣಿ ಮಾಡಲು ಅಲ್ಲ.",
+  "interpret.col0": "ಸಾಮಾನ್ಯ ಬೋಧನೆ",
+  "interpret.col1": "ಅಭ್ಯಾಸ ಸೇರಿಸಿ, ಗಮನಿಸಿ",
+  "interpret.col2": "ತಜ್ಞರ ನೋಟ ಬೇಕು",
+  "interpret.col3": "ತುರ್ತು ಪೂರ್ಣ ಪರೀಕ್ಷೆ",
+  "interpret.row1": "ಒಂದು ಸಂಕ್ಷಿಪ್ತ ಪರೀಕ್ಷೆ",
+  "interpret.row2": "ಪರೀಕ್ಷೆ + ತರಗತಿ ಕಾಳಜಿ",
+  "interpret.row3": "ಪರೀಕ್ಷೆ + ಹಿಂದಿನ ತೊಂದರೆ",
+  "interpret.shortTypical": "ಸಾಮಾನ್ಯ",
+  "interpret.shortWatch": "ಗಮನಿಸಿ",
+  "interpret.shortRefer": "ಕಳುಹಿಸಿ",  "records.title": "ಈ ಸಾಧನದ ದಾಖಲೆಗಳು",
   "records.empty": "ಇನ್ನೂ ಪರೀಕ್ಷೆಗಳಿಲ್ಲ.",
   "records.export": "CSV ರಫ್ತು",
   "records.clear": "ಎಲ್ಲವನ್ನು ಅಳಿಸಿ",
@@ -344,6 +492,7 @@ const hi: Record<Key, string> = {
   "nav.records": "रिकॉर्ड",
   "nav.protocol": "कैसे दें",
   "nav.about": "श्रेय",
+  "nav.interpret": "अर्थ",
   "home.kicker": "कन्नड़ · अंग्रेज़ी · हिन्दी",
   "home.title": "शब्द-पठन की कठिनाई कुछ मिनटों में पहचानें।",
   "home.lead":
@@ -366,6 +515,11 @@ const hi: Record<Key, string> = {
   "home.notDx": "यह संक्षिप्त जाँच है, डिस्लेक्सिया या अधिगम अक्षमता का निदान नहीं।",
   "home.credit":
     "ढाँचा: Ma एवं अन्य (2025) ROAR-CAT तथा jsCAT (Yeatman Lab)। कर्नाटक भाषा रूपांतर: वरिष्ठ वाक्-भाषा रोग विशेषज्ञ सुश्री रश्मि, बेंगलूरु।",
+  "home.interpretCta": "परिणाम कैसे पढ़ें",
+  "home.flagTitle": "तीन कक्षा संकेत",
+  "home.min": "लगभग ३ मिनट",
+  "home.langs": "तीन भाषाएँ",
+  "home.device": "इसी उपकरण पर",
   "screen.title": "नई जाँच",
   "screen.lead": "शिक्षक और बच्चे का विवरण भरें, फिर स्क्रीन बच्चे को दें।",
   "screen.teacher": "शिक्षक और स्कूल",
@@ -448,7 +602,75 @@ const hi: Record<Key, string> = {
     "पायलट उपकरण। कन्नड़ और हिन्दी शब्द नए हैं; स्थानीय मानक बाकी। संकेत अस्थायी हैं। आधिकारिक Stanford ROAR नहीं।",
   "results.thetaNote":
     "θ क्षमता अंक है (लगभग −३ से +३)। अधिक मतलब मज़बूत मौन शब्द पहचान। SE छोटा हो तो अधिक सटीक।",
-  "records.title": "इस उपकरण के रिकॉर्ड",
+  "results.means": "इसका अर्थ",
+  "results.thisWeek": "इस सप्ताह कक्षा में",
+  "results.sayChild": "बच्चे से यह कहें",
+  "results.sayParent": "अभिभावकों से यह कहें",
+  "results.dontSay": "यह न कहें",
+  "results.guide": "पूरी शिक्षक मार्गदर्शिका",
+  "interpret.title": "संकेत का अर्थ कैसे समझें",
+  "interpret.lead":
+    "ROAR-KA कक्षा संकेत देता है, चिकित्सकीय लेबल नहीं। बच्चे की सुनवाई से दूर पढ़ें। फिर तय करें इस सप्ताह क्या करना है, घर पर क्या कहना है।",
+  "interpret.kicker": "शिक्षक मार्गदर्शिका",
+  "interpret.notDx":
+    "सामान्य, निगरानी, भेजें — ये जाँच संकेत हैं। इनमें से कोई डिस्लेक्सिया, अधिगम अक्षमता या कम बुद्धि नहीं बताता।",
+  "interpret.flags": "तीन संकेत",
+  "interpret.typicalDo":
+    "सामान्य पठन शिक्षण जारी रखें। प्रयास की प्रशंसा करें। कक्षा पठन अटकता दिखे तभी फिर जाँचें।",
+  "interpret.typicalChild":
+    "«तुमने हर शब्द पर कोशिश की। इससे हमें पढ़ाई का हाल पता चलता है। कक्षा में लौटो।»",
+  "interpret.typicalParent":
+    "«इस छोटी शब्द जाँच में पहचान अपेक्षित सीमा में रही। स्कूल में सामान्य पठन अभ्यास जारी रहेगा।»",
+  "interpret.typicalDont":
+    "एक जाँच से बच्चे को «सबसे अच्छा पाठक» न कहें। यह केवल मौन शब्द पहचान है।",
+  "interpret.watchDo":
+    "शिक्षा की भाषा में रोज़ १० मिनट अतिरिक्त ध्वनि–अक्षर अभ्यास। ८–१२ सप्ताह में फिर जाँचें। चिंता रहे तो विशेष शिक्षक को बताएँ।",
+  "interpret.watchChild":
+    "«कुछ शब्द कठिन लगे। हम रोज़ थोड़ा अभ्यास करेंगे। तुम असफल नहीं हो।»",
+  "interpret.watchParent":
+    "«शब्द पहचान में कुछ कठिनाई दिखी। अतिरिक्त अभ्यास देंगे और लगभग दो महीने में फिर देखेंगे। यह निदान नहीं है।»",
+  "interpret.watchDont":
+    "बच्चे को अन्य विषयों से न रोकें। स्टाफ़ रूम में अधिगम-अक्षमता का लेबल न लगाएँ।",
+  "interpret.referDo":
+    "पूर्ण पठन और भाषा आकलन के लिए भेजें (विशेष शिक्षक / वाक्-भाषा विशेषज्ञ)। प्रतीक्षा में कक्षा में अतिरिक्त सहारा दें। मुद्रित रिपोर्ट साझा करें।",
+  "interpret.referChild":
+    "«शब्दों में किसे और मदद चाहिए, यह जाँच बताती है। पढ़ाई देखने वाले शिक्षक आपसे मिलेंगे। तुमने मेहनत की।»",
+  "interpret.referParent":
+    "«यह संक्षिप्त जाँच कहती है कि पूरी पठन जाँच मदद करेगी। यह डिस्लेक्सिया का निदान नहीं है। कृपया विशेष शिक्षक / वाक्-भाषा विशेषज्ञ से मिलें। कक्षा में हम सहारा देंगे।»",
+  "interpret.referDont":
+    "परिवार से «आपके बच्चे को डिस्लेक्सिया है» न कहें। केवल इसी संकेत से एक साल पीछे न रोकें।",
+  "interpret.incDo":
+    "शांत जगह पर दूसरे दिन दोहराएँ। बच्चा अस्वस्थ हो तो प्रतीक्षा करें। दो बार हो तो निगरानी मानें।",
+  "interpret.sayTitle": "सहायक शब्द",
+  "interpret.doTitle": "आगे आप क्या करें",
+  "interpret.thetaTitle": "संख्या θ — सादी भाषा में",
+  "interpret.thetaBody":
+    "θ (थीटा) मौन शब्द पहचान का संक्षिप्त अंक है, आमतौर पर −३ से +३। शून्य इस शब्द-भंडार का औसत है। अधिक बेहतर। संकेत पहले से कक्षा के लिए अनुवाद है — अभिभावकों को θ समझाने की ज़रूरत नहीं।",
+  "interpret.seTitle": "सटीकता (SE)",
+  "interpret.seBody":
+    "SE बताता है कंप्यूटर अभी कितना अनिश्चित है। लगभग ०.४० से कम इस पायलट के लिए काफी है। कम शब्द + बड़ा SE = अनिर्णीत — भेजने के बजाय दोहराएँ।",
+  "interpret.slowTitle": "धीमे पर अधिकतर सही",
+  "interpret.slowBody":
+    "शब्द पता हो सकते हैं, पर थकान या हिचक। टिप्पणी में «धीमे, सावधान» लिखें। संकेत का पालन करें। अगली जाँच में जल्दबाज़ी न करें।",
+  "interpret.guessTitle": "तेज़ दबाना, ज़्यादा गलतियाँ",
+  "interpret.guessBody":
+    "«बिना देखे अनुमान» लिखें। असली बनाम बनावटी न समझे हों तो आराम के बाद एक बार दोहराएँ। उत्तर न बताएँ।",
+  "interpret.whenTitle": "कब फिर जाँच करें",
+  "interpret.whenBody":
+    "निगरानी: अतिरिक्त अभ्यास के ८–१२ सप्ताह बाद। भेजें: विशेषज्ञ आकलन के बाद, या परिवार न आ सके तो। सामान्य: कक्षा पठन गिरे तभी इस अवधि में। अस्वस्थ, भूखे या बहुत उदास बच्चे की जाँच न करें।",
+  "interpret.matrixTitle": "संकेत कितना गंभीर?",
+  "interpret.matrixLead":
+    "बच्चे के पठन मार्ग पर प्रभाव — चिकित्सकीय जोखिम चार्ट नहीं। अगला कदम चुनने के लिए; कक्षा में बच्चों को रैंक करने के लिए नहीं।",
+  "interpret.col0": "सामान्य शिक्षण",
+  "interpret.col1": "अभ्यास जोड़ें, निगरानी",
+  "interpret.col2": "विशेषज्ञ की नज़र",
+  "interpret.col3": "तुरन्त पूर्ण आकलन",
+  "interpret.row1": "एक संक्षिप्त जाँच",
+  "interpret.row2": "जाँच + कक्षा चिंता",
+  "interpret.row3": "जाँच + पुरानी कठिनाई",
+  "interpret.shortTypical": "सामान्य",
+  "interpret.shortWatch": "निगरानी",
+  "interpret.shortRefer": "भेजें",  "records.title": "इस उपकरण के रिकॉर्ड",
   "records.empty": "अभी कोई जाँच नहीं।",
   "records.export": "CSV निर्यात",
   "records.clear": "सब हटाएँ",

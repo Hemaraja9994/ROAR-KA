@@ -19,8 +19,9 @@ export function WordTrial({
     <div className="flex flex-1 flex-col">
       <div className="flex flex-1 items-center justify-center px-4">
         <p
+          key={item.id}
           className={cn(
-            "max-w-full text-center text-5xl font-medium leading-tight tracking-tight text-ink sm:text-6xl",
+            "word-swap max-w-full text-center text-5xl font-medium leading-tight tracking-tight text-ink sm:text-6xl",
             testLang === "kn" && "word-kn",
             testLang === "hi" && "word-hi",
             testLang === "en" && "word-en",
@@ -34,11 +35,11 @@ export function WordTrial({
           type="button"
           disabled={locked}
           onClick={() => onAnswer(true)}
-          className="flex min-h-24 flex-col items-center justify-center rounded-xl bg-teal px-3 text-paper shadow-[var(--shadow-border)] transition-transform duration-150 ease-out active:not-disabled:scale-[0.96] disabled:opacity-60"
+          className="flex min-h-24 flex-col items-center justify-center rounded-xl bg-coral px-3 text-surface shadow-[var(--shadow-border)] transition-transform duration-150 ease-out active:not-disabled:scale-[0.96] disabled:opacity-60"
         >
           <span className="text-lg font-semibold">{t(testLang, "test.real")}</span>
           {uiLang !== testLang ? (
-            <span className="mt-1 text-xs text-paper/70">{t(uiLang, "test.real")}</span>
+            <span className="mt-1 text-xs text-surface/70">{t(uiLang, "test.real")}</span>
           ) : null}
         </button>
         <button

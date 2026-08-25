@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Download, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { PageHero } from "@/components/ribbons";
 import { downloadText, sessionsToCsv } from "@/lib/export";
 import { gradeLabel, t } from "@/lib/i18n";
 import { useApp } from "@/lib/store";
@@ -16,12 +17,11 @@ function RecordsPage() {
   const clear = useApp((s) => s.clearAll);
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-8">
+    <div>
+      <PageHero kicker={t(uiLang, "app.place")} title={t(uiLang, "records.title")} />
+      <main className="enter mx-auto max-w-3xl px-4 py-8">
       <div className="flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <h1 className="font-display text-3xl font-medium">{t(uiLang, "records.title")}</h1>
-          <p className="mt-1 text-sm text-dust">{sessions.length}</p>
-        </div>
+        <p className="text-sm text-dust">{sessions.length}</p>
         <div className="flex gap-2">
           <Button
             variant="secondary"
@@ -65,12 +65,11 @@ function RecordsPage() {
                 </div>
                 <span
                   className={cn(
-                    "self-start rounded-sm px-2 py-1 text-xs font-medium",
-                    s.band === "typical" && "bg-foam text-typical",
-                    s.band === "watch" && "bg-paper-2 text-watch",
-                    s.band === "refer" && "bg-paper-2 text-refer",
-                    s.band === "inconclusive" && "bg-paper-2 text-dust",
-                  )}
+                    "self-start rounded-md px-2 py-1 text-xs font-medium",
+                    s.band === "typical" && "bg-flag-low text-typical",
+                    s.band === "watch" && "bg-flag-mid text-watch",
+                    s.band === "refer" && "bg-flag-high text-refer",
+                    s.band === "inconclusive" && "bg-paper-2 text-dust",                  )}
                 >
                   {s.band} · θ {round(s.theta, 1)}
                 </span>
@@ -90,5 +89,6 @@ function RecordsPage() {
         </ul>
       )}
     </main>
+    </div>
   );
 }

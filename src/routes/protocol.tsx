@@ -1,5 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { PageHero, StepMark } from "@/components/ribbons";
 import { t } from "@/lib/i18n";
 import { useApp } from "@/lib/store";
 
@@ -18,37 +21,51 @@ function ProtocolPage() {
   const donts = ["protocol.dont1", "protocol.dont2", "protocol.dont3"] as const;
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-8">
-      <h1 className="font-display text-3xl font-medium">{t(uiLang, "protocol.title")}</h1>
-      <p className="mt-2 text-ink-soft">{t(uiLang, "protocol.lead")}</p>
-      <ol className="mt-8 space-y-3">
-        {steps.map(([ht, hb]) => (
-          <li key={ht}>
-            <Card className="p-5">
-              <h2 className="font-display text-xl font-medium">{t(uiLang, ht)}</h2>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">{t(uiLang, hb)}</p>
-            </Card>
-          </li>
-        ))}
-      </ol>
-      <div className="mt-6 grid gap-4 sm:grid-cols-2">
-        <Card>
-          <h2 className="font-display text-xl font-medium text-typical">{t(uiLang, "protocol.do")}</h2>
-          <ul className="mt-3 space-y-2 text-sm text-ink-soft">
-            {dos.map((k) => (
-              <li key={k}>{t(uiLang, k)}</li>
-            ))}
-          </ul>
-        </Card>
-        <Card>
-          <h2 className="font-display text-xl font-medium text-refer">{t(uiLang, "protocol.dont")}</h2>
-          <ul className="mt-3 space-y-2 text-sm text-ink-soft">
-            {donts.map((k) => (
-              <li key={k}>{t(uiLang, k)}</li>
-            ))}
-          </ul>
-        </Card>
-      </div>
-    </main>
+    <div>
+      <PageHero
+        kicker={t(uiLang, "app.place")}
+        title={t(uiLang, "protocol.title")}
+        lead={t(uiLang, "protocol.lead")}
+      />
+      <main className="enter mx-auto max-w-3xl px-4 py-8">
+        <ol className="space-y-3">
+          {steps.map(([ht, hb], i) => (
+            <li key={ht}>
+              <Card className="lift flex gap-4 p-5">
+                <StepMark n={i + 1} />
+                <div>
+                  <h2 className="font-display text-xl font-medium">{t(uiLang, ht)}</h2>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-soft">{t(uiLang, hb)}</p>
+                </div>
+              </Card>
+            </li>
+          ))}
+        </ol>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <Card>
+            <h2 className="font-display text-xl font-medium text-purple">{t(uiLang, "protocol.do")}</h2>
+            <ul className="mt-3 space-y-2 text-sm text-ink-soft">
+              {dos.map((k) => (
+                <li key={k}>{t(uiLang, k)}</li>
+              ))}
+            </ul>
+          </Card>
+          <Card>
+            <h2 className="font-display text-xl font-medium text-refer">{t(uiLang, "protocol.dont")}</h2>
+            <ul className="mt-3 space-y-2 text-sm text-ink-soft">
+              {donts.map((k) => (
+                <li key={k}>{t(uiLang, k)}</li>
+              ))}
+            </ul>
+          </Card>
+        </div>
+        <Button className="mt-8" size="lg" asChild>
+          <Link to="/interpret">
+            {t(uiLang, "home.interpretCta")}
+            <ArrowRight className="size-4" />
+          </Link>
+        </Button>
+      </main>
+    </div>
   );
 }
