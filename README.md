@@ -8,7 +8,9 @@ This is a **screen, not a diagnosis**. Kannada and Hindi item banks are newly wr
 
 ## Who it is for
 
-School teachers in Karnataka (Classes 1–8), for a research pilot and clinical conference led by **Ms. Rashmi**, Senior Speech Language Pathologist, Bengaluru. Built so it can later be considered for scale-up (including pathways such as Sarva Shiksha Abhiyan) after validation and government review.
+School teachers in Karnataka (Classes 1–8), for a research pilot and clinical conference in Bengaluru. Built so it can later be considered for scale-up (including pathways such as Sarva Shiksha Abhiyan) after validation and government review.
+
+Concept and design: Hemaraja Nayaka. S · Mr. Sumanth AV · Ms. Spoorthi · Ms. Apoorva · Ms. Jeevitha · Ms. Rashmi · Ms. Bandhavya
 
 Records stay in the teacher’s browser until they export a CSV. Nothing is uploaded.
 

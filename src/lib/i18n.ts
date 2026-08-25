@@ -18,7 +18,7 @@ const en = {
   "home.demo": "Try a demo",
   "home.for": "Who it is for",
   "home.forBody":
-    "Government, aided and private school teachers screening Classes 1–8 for possible reading / learning difficulties. Built for Ms. Rashmi’s clinical-conference pilot in Bengaluru, with a path toward Sarva Shiksha Abhiyan scale-up.",
+    "Government, aided and private school teachers screening Classes 1–8 for possible reading / learning difficulties. Built for a Bengaluru clinical-conference pilot, with a path toward Sarva Shiksha Abhiyan scale-up.",
   "home.how": "What the child does",
   "home.how1t": "See a word",
   "home.how1b": "One word at a time, in Kannada, English or Hindi.",
@@ -32,7 +32,7 @@ const en = {
   "home.notDx":
     "This is a brief screening, not a diagnosis of dyslexia or specific learning disability.",
   "home.credit":
-    "Frame and CAT method after Ma, Richie-Halford, Burkhardt, Kanopka, Chou, Domingue & Yeatman (2025), ROAR-CAT, and jsCAT (Yeatman Lab). Karnataka language adaptation for research by Ms. Rashmi, Senior Speech Language Pathologist, Bengaluru.",
+    "Frame and CAT method after Ma, Richie-Halford, Burkhardt, Kanopka, Chou, Domingue & Yeatman (2025), ROAR-CAT, and jsCAT (Yeatman Lab). Karnataka language adaptation for school screening in Bengaluru.",
   "home.interpretCta": "How to read a result",
   "home.flagTitle": "Three classroom flags",
   "home.min": "About 3 minutes",
@@ -118,7 +118,7 @@ const en = {
   "results.export": "Export this child",
   "results.again": "New screening",
   "results.disclaimer":
-    "Pilot tool. Kannada and Hindi items are newly written and not yet locally normed. Bands are provisional pending Ms. Rashmi’s validation sample. Not official Stanford ROAR.",
+    "Pilot tool. Kannada and Hindi items are newly written and not yet locally normed. Bands are provisional pending a local validation sample. Not official Stanford ROAR.",
   "results.thetaNote":
     "θ is an IRT ability score (about −3 to +3). Higher means stronger silent word recognition. SE is the standard error — smaller is more precise.",
   "results.means": "What this means",
@@ -230,7 +230,7 @@ const en = {
     "jsCAT library: Wanjing Anya Ma, Emily Judith Arteaga Garcia, Jason D. Yeatman, Adam Richie-Halford — yeatmanlab/jsCAT (MIT).",
   "about.ka": "This Karnataka adaptation",
   "about.kaBody":
-    "Kannada, English and Hindi item banks, teacher workflow, and Kannada/Hindi interface were written for a research pilot and clinical conference by Ms. Rashmi, Senior Speech Language Pathologist, Bengaluru, with implementation from the Reading-Screening-Test project (Hemaraja Nayaka. S). Intended for school screening of children with possible learning issues in Bengaluru, then for wider Karnataka use, including pathways such as Sarva Shiksha Abhiyan — pending validation and government review.",
+    "Kannada, English and Hindi item banks, teacher workflow, and Kannada/Hindi interface were written for a research pilot and clinical conference in Bengaluru. Intended for school screening of children with possible learning issues, then for wider Karnataka use, including pathways such as Sarva Shiksha Abhiyan — pending validation and government review.",
   "about.notOfficial":
     "This is not the official Stanford ROAR product. English items here are original parallels, not the copyrighted ROAR item bank. Kannada and Hindi banks are new and must be validated before high-stakes use.",
   "about.privacy":
@@ -241,6 +241,8 @@ const en = {
   "common.ms": "ms",
   "common.of": "of",
   "common.demoChild": "Demo child",
+  "footer.team":
+    "Concept and design: Hemaraja Nayaka. S · Mr. Sumanth AV · Ms. Spoorthi · Ms. Apoorva · Ms. Jeevitha · Ms. Rashmi · Ms. Bandhavya",
 } as const;
 
 type Key = keyof typeof en;
@@ -263,7 +265,7 @@ const kn: Record<Key, string> = {
   "home.demo": "ಮಾದರಿ ನೋಡಿ",
   "home.for": "ಯಾರಿಗಾಗಿ",
   "home.forBody":
-    "೧–೮ ನೇ ತರಗತಿಯಲ್ಲಿ ಓದು / ಕಲಿಕಾ ತೊಂದರೆ ಇರಬಹುದಾದ ಮಕ್ಕಳನ್ನು ಗುರುತಿಸುವ ಸರ್ಕಾರಿ, ಅನುದಾನಿತ ಮತ್ತು ಖಾಸಗಿ ಶಾಲಾ ಶಿಕ್ಷಕರು. ಬೆಂಗಳೂರಿನ ಹಿರಿಯ ವಾಕ್-ಭಾಷಾ ತಜ್ಞೆ ರಶ್ಮಿ ಅವರ ಪೈಲಟ್‌ಗಾಗಿ; ನಂತರ ಸರ್ವ ಶಿಕ್ಷಣ ಅಭಿಯಾನದತ್ತ.",
+    "೧–೮ ನೇ ತರಗತಿಯಲ್ಲಿ ಓದು / ಕಲಿಕಾ ತೊಂದರೆ ಇರಬಹುದಾದ ಮಕ್ಕಳನ್ನು ಗುರುತಿಸುವ ಸರ್ಕಾರಿ, ಅನುದಾನಿತ ಮತ್ತು ಖಾಸಗಿ ಶಾಲಾ ಶಿಕ್ಷಕರು. ಬೆಂಗಳೂರಿನ ವೈದ್ಯಕೀಯ ಸಮ್ಮೇಳನದ ಪೈಲಟ್‌ಗಾಗಿ; ನಂತರ ಸರ್ವ ಶಿಕ್ಷಣ ಅಭಿಯಾನದತ್ತ.",
   "home.how": "ಮಗು ಏನು ಮಾಡುತ್ತದೆ",
   "home.how1t": "ಪದ ನೋಡಿ",
   "home.how1b": "ಒಂದೊಂದು ಪದ — ಕನ್ನಡ, ಇಂಗ್ಲಿಷ್ ಅಥವಾ ಹಿಂದಿ.",
@@ -276,7 +278,7 @@ const kn: Record<Key, string> = {
     "ಹೆಸರು ಮತ್ತು ಅಂಕಗಳು ಈ ಬ್ರೌಸರ್‌ನಲ್ಲಿಯೇ ಉಳಿಯುತ್ತವೆ. ನೀವು CSV ರಫ್ತು ಮಾಡುವವರೆಗೆ ಏನೂ ಕಳುಹಿಸಲಾಗುವುದಿಲ್ಲ.",
   "home.notDx": "ಇದು ಸಂಕ್ಷಿಪ್ತ ಪರೀಕ್ಷೆ ಮಾತ್ರ; ಡಿಸ್ಲೆಕ್ಸಿಯಾ ಅಥವಾ ಕಲಿಕಾ ನ್ಯೂನತೆಯ ರೋಗನಿರ್ಣಯವಲ್ಲ.",
   "home.credit":
-    "ಚೌಕಟ್ಟು: Ma ಮತ್ತು ಇತರರು (2025) ROAR-CAT ಹಾಗೂ jsCAT (Yeatman Lab). ಕರ್ನಾಟಕ ಭಾಷಾ ರೂಪಾಂತರ: ಹಿರಿಯ ವಾಕ್-ಭಾಷಾ ತಜ್ಞೆ ರಶ್ಮಿ, ಬೆಂಗಳೂರು.",
+    "ಚೌಕಟ್ಟು: Ma ಮತ್ತು ಇತರರು (2025) ROAR-CAT ಹಾಗೂ jsCAT (Yeatman Lab). ಕರ್ನಾಟಕ ಭಾಷಾ ರೂಪಾಂತರ: ಬೆಂಗಳೂರು ಶಾಲಾ ಪರೀಕ್ಷೆ.",
   "home.interpretCta": "ಫಲಿತಾಂಶವನ್ನು ಹೇಗೆ ಓದುವುದು",
   "home.flagTitle": "ಮೂರು ತರಗತಿ ಸೂಚನೆಗಳು",
   "home.min": "ಸುಮಾರು ೩ ನಿಮಿಷ",
@@ -470,7 +472,7 @@ const kn: Record<Key, string> = {
     "jsCAT: Wanjing Anya Ma, Emily Judith Arteaga Garcia, Jason D. Yeatman, Adam Richie-Halford — yeatmanlab/jsCAT (MIT).",
   "about.ka": "ಈ ಕರ್ನಾಟಕ ರೂಪಾಂತರ",
   "about.kaBody":
-    "ಕನ್ನಡ, ಇಂಗ್ಲಿಷ್, ಹಿಂದಿ ಪದಸಂಪುಟ ಮತ್ತು ಶಿಕ್ಷಕರ ಹರಿವು — ಬೆಂಗಳೂರಿನ ಹಿರಿಯ ವಾಕ್-ಭಾಷಾ ತಜ್ಞೆ ರಶ್ಮಿ ಅವರ ಸಂಶೋಧನಾ ಪೈಲಟ್ ಮತ್ತು ವೈದ್ಯಕೀಯ ಸಮ್ಮೇಳನಕ್ಕಾಗಿ. ಅನುಷ್ಠಾನ: Reading-Screening-Test (ಹೇಮರಾಜ ನಾಯಕ. ಎಸ್). ಬೆಂಗಳೂರು ಶಾಲಾ ಪರೀಕ್ಷೆ, ನಂತರ ಸರ್ವ ಶಿಕ್ಷಣ ಅಭಿಯಾನದತ್ತ — ಮಾನ್ಯತೆ ಮತ್ತು ಸರ್ಕಾರಿ ಪರಿಶೀಲನೆ ಬಾಕಿ.",
+    "ಕನ್ನಡ, ಇಂಗ್ಲಿಷ್, ಹಿಂದಿ ಪದಸಂಪುಟ ಮತ್ತು ಶಿಕ್ಷಕರ ಹರಿವು — ಬೆಂಗಳೂರಿನ ಸಂಶೋಧನಾ ಪೈಲಟ್ ಮತ್ತು ವೈದ್ಯಕೀಯ ಸಮ್ಮೇಳನಕ್ಕಾಗಿ. ಬೆಂಗಳೂರು ಶಾಲಾ ಪರೀಕ್ಷೆ, ನಂತರ ಸರ್ವ ಶಿಕ್ಷಣ ಅಭಿಯಾನದತ್ತ — ಮಾನ್ಯತೆ ಮತ್ತು ಸರ್ಕಾರಿ ಪರಿಶೀಲನೆ ಬಾಕಿ.",
   "about.notOfficial":
     "ಇದು ಅಧಿಕೃತ Stanford ROAR ಅಲ್ಲ. ಇಂಗ್ಲಿಷ್ ಪದಗಳು ಮೂಲ ROAR ಬ್ಯಾಂಕ್ ಅಲ್ಲ. ಕನ್ನಡ/ಹಿಂದಿ ಹೊಸವು; ಮಾನ್ಯತೆ ಅಗತ್ಯ.",
   "about.privacy":
@@ -481,6 +483,8 @@ const kn: Record<Key, string> = {
   "common.ms": "ಮಿಲಿಸೆಕೆಂಡ್",
   "common.of": "/",
   "common.demoChild": "ಮಾದರಿ ಮಗು",
+  "footer.team":
+    "ಪರಿಕಲ್ಪನೆ ಮತ್ತು ವಿನ್ಯಾಸ: Hemaraja Nayaka. S · Mr. Sumanth AV · Ms. Spoorthi · Ms. Apoorva · Ms. Jeevitha · Ms. Rashmi · Ms. Bandhavya",
 };
 
 const hi: Record<Key, string> = {
@@ -501,7 +505,7 @@ const hi: Record<Key, string> = {
   "home.demo": "डेमो आज़माएँ",
   "home.for": "किसके लिए",
   "home.forBody":
-    "कक्षा १–८ में पढ़ने / सीखने की संभावित कठिनाई की जाँच करते सरकारी, सहायता-प्राप्त और निजी स्कूल शिक्षक। बेंगलूरु की वरिष्ठ वाक्-भाषा रोग विशेषज्ञ सुश्री रश्मि के पायलट के लिए; आगे सर्व शिक्षा अभियान की ओर।",
+    "कक्षा १–८ में पढ़ने / सीखने की संभावित कठिनाई की जाँच करते सरकारी, सहायता-प्राप्त और निजी स्कूल शिक्षक। बेंगलूरु क्लिनिकल कॉन्फ्रेंस पायलट के लिए; आगे सर्व शिक्षा अभियान की ओर।",
   "home.how": "बच्चा क्या करता है",
   "home.how1t": "शब्द देखें",
   "home.how1b": "एक-एक शब्द — कन्नड़, अंग्रेज़ी या हिन्दी।",
@@ -514,7 +518,7 @@ const hi: Record<Key, string> = {
     "नाम और अंक इस ब्राउज़र में रहते हैं। जब तैयार हों, शोध टीम के लिए CSV निर्यात करें।",
   "home.notDx": "यह संक्षिप्त जाँच है, डिस्लेक्सिया या अधिगम अक्षमता का निदान नहीं।",
   "home.credit":
-    "ढाँचा: Ma एवं अन्य (2025) ROAR-CAT तथा jsCAT (Yeatman Lab)। कर्नाटक भाषा रूपांतर: वरिष्ठ वाक्-भाषा रोग विशेषज्ञ सुश्री रश्मि, बेंगलूरु।",
+    "ढाँचा: Ma एवं अन्य (2025) ROAR-CAT तथा jsCAT (Yeatman Lab)। कर्नाटक भाषा रूपांतर: बेंगलूरु स्कूल जाँच।",
   "home.interpretCta": "परिणाम कैसे पढ़ें",
   "home.flagTitle": "तीन कक्षा संकेत",
   "home.min": "लगभग ३ मिनट",
@@ -708,7 +712,7 @@ const hi: Record<Key, string> = {
     "jsCAT: Wanjing Anya Ma, Emily Judith Arteaga Garcia, Jason D. Yeatman, Adam Richie-Halford — yeatmanlab/jsCAT (MIT)।",
   "about.ka": "यह कर्नाटक रूपांतर",
   "about.kaBody":
-    "कन्नड़, अंग्रेज़ी, हिन्दी शब्द-भंडार और शिक्षक प्रवाह — बेंगलूरु की वरिष्ठ वाक्-भाषा रोग विशेषज्ञ सुश्री रश्मि के शोध पायलट और क्लिनिकल कॉन्फ्रेंस के लिए। कार्यान्वयन: Reading-Screening-Test (हेमराज नायक. एस)। बेंगलूरु स्कूल जाँच, फिर सर्व शिक्षा अभियान — मान्यता और सरकारी समीक्षा शेष।",
+    "कन्नड़, अंग्रेज़ी, हिन्दी शब्द-भंडार और शिक्षक प्रवाह — बेंगलूरु शोध पायलट और क्लिनिकल कॉन्फ्रेंस के लिए। बेंगलूरु स्कूल जाँच, फिर सर्व शिक्षा अभियान — मान्यता और सरकारी समीक्षा शेष।",
   "about.notOfficial":
     "यह आधिकारिक Stanford ROAR नहीं है। अंग्रेज़ी शब्द मूल ROAR बैंक नहीं हैं। कन्नड़/हिन्दी नए हैं; मान्यता आवश्यक।",
   "about.privacy":
@@ -719,6 +723,8 @@ const hi: Record<Key, string> = {
   "common.ms": "मि.से.",
   "common.of": "/",
   "common.demoChild": "डेमो बच्चा",
+  "footer.team":
+    "अवधारणा और डिज़ाइन: Hemaraja Nayaka. S · Mr. Sumanth AV · Ms. Spoorthi · Ms. Apoorva · Ms. Jeevitha · Ms. Rashmi · Ms. Bandhavya",
 };
 
 const dict: Record<Lang, Record<Key, string>> = { en, kn, hi };

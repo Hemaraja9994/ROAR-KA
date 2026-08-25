@@ -46,6 +46,7 @@ function AboutPage() {
         <p className="mt-3 text-sm leading-relaxed text-ink-soft">{t(uiLang, "about.kaBody")}</p>
         <p className="mt-3 text-sm leading-relaxed text-ink-soft">{t(uiLang, "about.notOfficial")}</p>
         <p className="mt-3 text-sm leading-relaxed text-ink-soft">{t(uiLang, "about.privacy")}</p>
+        <p className="mt-4 text-xs leading-relaxed text-dust">{t(uiLang, "footer.team")}</p>
       </Card>
     </main>
     </div>

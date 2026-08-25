@@ -16,7 +16,7 @@ function Home() {
 
   function fillDemo() {
     setTeacher({
-      name: "Ms. Rashmi (demo)",
+      name: "Demo teacher",
       school: "Bengaluru Pilot School",
       district: "bengaluru-urban",
       schoolType: "government",

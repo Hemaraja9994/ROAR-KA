@@ -105,6 +105,9 @@ export function AppShell({ children }: { children: ReactNode }) {
         ) : null}
       </nav>
       {children}
+      <footer className="no-print border-t border-rule bg-navy px-4 py-3 text-center text-[11px] leading-relaxed text-surface/70 sm:text-xs">
+        {t(uiLang, "footer.team")}
+      </footer>
     </div>
   );
 }
