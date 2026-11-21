@@ -8,7 +8,7 @@ import { getPractice, getTestBank } from "@/lib/items";
 import { accuracyOf, bandFromTheta } from "@/lib/scoring";
 import { useApp } from "@/lib/store";
 import type { Item, ScreeningSession, Trial } from "@/lib/types";
-import { MAX_TEST_ITEMS, MIN_TEST_ITEMS, SE_STOP } from "@/lib/types";
+import { MAX_TEST_ITEMS, MIN_TEST_ITEMS, SE_STOP, wordClass } from "@/lib/types";
 
 export const Route = createFileRoute("/test")({ component: TestPage });
 
@@ -187,7 +187,7 @@ export function TestPage() {
             {feedback.item.real ? t(uiLang, "test.realExplain") : t(uiLang, "test.pseudoExplain")}
           </p>
           <p
-            className={`mt-6 text-4xl font-medium ${testLang === "kn" ? "word-kn" : testLang === "hi" ? "word-hi" : "word-en"}`}
+            className={`mt-6 text-4xl font-medium ${wordClass(testLang)}`}
           >
             {feedback.item.text}
           </p>

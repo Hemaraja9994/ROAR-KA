@@ -12,11 +12,14 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as InterpretRouteImport } from './routes/interpret'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as ProtocolRouteImport } from './routes/protocol'
 import { Route as RecordsRouteImport } from './routes/records'
 import { Route as ScreenRouteImport } from './routes/screen'
+import { Route as SignupRouteImport } from './routes/signup'
 import { Route as TestRouteImport } from './routes/test'
 import { Route as ResultsIdRouteImport } from './routes/results.$id'
+import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -31,6 +34,11 @@ const AboutRoute = AboutRouteImport.update({
 const InterpretRoute = InterpretRouteImport.update({
   id: '/interpret',
   path: '/interpret',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProtocolRoute = ProtocolRouteImport.update({
@@ -48,6 +56,11 @@ const ScreenRoute = ScreenRouteImport.update({
   path: '/screen',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TestRoute = TestRouteImport.update({
   id: '/test',
   path: '/test',
@@ -58,37 +71,51 @@ const ResultsIdRoute = ResultsIdRouteImport.update({
   path: '/results/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
+  id: '/api/auth/$',
+  path: '/api/auth/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/interpret': typeof InterpretRoute
+  '/login': typeof LoginRoute
   '/protocol': typeof ProtocolRoute
   '/records': typeof RecordsRoute
   '/screen': typeof ScreenRoute
+  '/signup': typeof SignupRoute
   '/test': typeof TestRoute
   '/results/$id': typeof ResultsIdRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/interpret': typeof InterpretRoute
+  '/login': typeof LoginRoute
   '/protocol': typeof ProtocolRoute
   '/records': typeof RecordsRoute
   '/screen': typeof ScreenRoute
+  '/signup': typeof SignupRoute
   '/test': typeof TestRoute
   '/results/$id': typeof ResultsIdRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/interpret': typeof InterpretRoute
+  '/login': typeof LoginRoute
   '/protocol': typeof ProtocolRoute
   '/records': typeof RecordsRoute
   '/screen': typeof ScreenRoute
+  '/signup': typeof SignupRoute
   '/test': typeof TestRoute
   '/results/$id': typeof ResultsIdRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -96,42 +123,54 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/interpret'
+    | '/login'
     | '/protocol'
     | '/records'
     | '/screen'
+    | '/signup'
     | '/test'
     | '/results/$id'
+    | '/api/auth/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/interpret'
+    | '/login'
     | '/protocol'
     | '/records'
     | '/screen'
+    | '/signup'
     | '/test'
     | '/results/$id'
+    | '/api/auth/$'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/interpret'
+    | '/login'
     | '/protocol'
     | '/records'
     | '/screen'
+    | '/signup'
     | '/test'
     | '/results/$id'
+    | '/api/auth/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   InterpretRoute: typeof InterpretRoute
+  LoginRoute: typeof LoginRoute
   ProtocolRoute: typeof ProtocolRoute
   RecordsRoute: typeof RecordsRoute
   ScreenRoute: typeof ScreenRoute
+  SignupRoute: typeof SignupRoute
   TestRoute: typeof TestRoute
   ResultsIdRoute: typeof ResultsIdRoute
+  ApiAuthSplatRoute: typeof ApiAuthSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -157,6 +196,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InterpretRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/protocol': {
       id: '/protocol'
       path: '/protocol'
@@ -178,6 +224,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ScreenRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/test': {
       id: '/test'
       path: '/test'
@@ -192,6 +245,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResultsIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/auth/$': {
+      id: '/api/auth/$'
+      path: '/api/auth/$'
+      fullPath: '/api/auth/$'
+      preLoaderRoute: typeof ApiAuthSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -199,11 +259,14 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   InterpretRoute: InterpretRoute,
+  LoginRoute: LoginRoute,
   ProtocolRoute: ProtocolRoute,
   RecordsRoute: RecordsRoute,
   ScreenRoute: ScreenRoute,
+  SignupRoute: SignupRoute,
   TestRoute: TestRoute,
   ResultsIdRoute: ResultsIdRoute,
+  ApiAuthSplatRoute: ApiAuthSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

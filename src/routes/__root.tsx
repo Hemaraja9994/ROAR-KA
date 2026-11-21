@@ -16,7 +16,7 @@ function RootInner() {
   }, []);
 
   useEffect(() => {
-    document.documentElement.lang = uiLang === "kn" ? "kn" : uiLang === "hi" ? "hi" : "en";
+    document.documentElement.lang = uiLang;
   }, [uiLang]);
 
   return (
@@ -36,7 +36,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "ROAR-KA: Rapid Online Assessment of Reading for Karnataka schools — Kannada, English, Hindi classroom screening.",
+          "ROAR-KA: Rapid Online Assessment of Reading for Karnataka schools — Kannada, English, Hindi, Telugu, Tamil, Malayalam classroom screening.",
       },
     ],
     links: [
@@ -55,7 +55,7 @@ export const Route = createRootRoute({
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Literata:opsz,wght@7..72,500;7..72,600&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Kannada:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@500;600;700&family=Noto+Serif+Kannada:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Literata:opsz,wght@7..72,500;7..72,600&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Kannada:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@500;600;700&family=Noto+Serif+Kannada:wght@500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Serif+Telugu:wght@500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Noto+Serif+Tamil:wght@500;600;700&family=Noto+Sans+Malayalam:wght@400;500;600;700&family=Noto+Serif+Malayalam:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700&display=swap",
       },
     ],
   }),

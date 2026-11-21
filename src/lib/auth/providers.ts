@@ -25,7 +25,9 @@ export type GrokProvider = {
   label: string;
 };
 
-export const GROK_PROVIDERS: readonly GrokProvider[] = [
-  { providerId: "grok-google", idp: "google", label: "Google" },
-  { providerId: "grok-x", idp: "twitter", label: "X" },
-];
+/**
+ * ROAR-KA uses teacher email + password sign-in only (see ./email-password),
+ * so no broker providers are offered. Re-add entries here only if the app is
+ * moved back onto the Grok auth broker.
+ */
+export const GROK_PROVIDERS: readonly GrokProvider[] = [];

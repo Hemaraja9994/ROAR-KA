@@ -1,22 +1,28 @@
-export type Lang = "en" | "kn" | "hi";
+export type Lang = "en" | "kn" | "hi" | "te" | "ta" | "ml";
+
+/** All supported languages, in switcher order. */
+export const LANGS: Lang[] = ["kn", "en", "hi", "te", "ta", "ml"];
+
+/** Each language's own name, for the language switcher. */
+export const NATIVE_NAME: Record<Lang, string> = {
+  kn: "ಕನ್ನಡ",
+  en: "English",
+  hi: "हिन्दी",
+  te: "తెలుగు",
+  ta: "தமிழ்",
+  ml: "മലയാളം",
+};
+
+/** CSS class that sets the right script font for a test word. */
+export function wordClass(lang: Lang): string {
+  return `word-${lang}`;
+}
 
 export type SchoolType = "government" | "aided" | "private" | "other";
 
 export type Sex = "girl" | "boy" | "unspecified";
 
-export type Grade =
-  | "lkg"
-  | "ukg"
-  | "1"
-  | "2"
-  | "3"
-  | "4"
-  | "5"
-  | "6"
-  | "7"
-  | "8"
-  | "9"
-  | "10";
+export type Grade = "lkg" | "ukg" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10";
 
 export type RiskBand = "typical" | "watch" | "refer" | "inconclusive";
 

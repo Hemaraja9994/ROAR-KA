@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Fraunces", "Noto Serif Kannada", "Noto Serif Devanagari", ui-serif, serif;
-  --font-sans: "Source Sans 3", "Noto Sans Kannada", "Noto Sans Devanagari", ui-sans-serif, system-ui, sans-serif;
-  --font-word: "Literata", "Noto Serif Kannada", "Noto Serif Devanagari", ui-serif, serif;
+  --font-display: "Fraunces", "Noto Serif Kannada", "Noto Serif Devanagari", "Noto Serif Telugu", "Noto Serif Tamil", "Noto Serif Malayalam", ui-serif, serif;
+  --font-sans: "Source Sans 3", "Noto Sans Kannada", "Noto Sans Devanagari", "Noto Sans Telugu", "Noto Sans Tamil", "Noto Sans Malayalam", ui-sans-serif, system-ui, sans-serif;
+  --font-word: "Literata", "Noto Serif Kannada", "Noto Serif Devanagari", "Noto Serif Telugu", "Noto Serif Tamil", "Noto Serif Malayalam", ui-serif, serif;
 
   --color-navy: #0b1f4d;
   --color-navy-2: #071433;
@@ -93,6 +93,18 @@
 
 .word-hi {
   font-family: "Noto Serif Devanagari", var(--font-word);
+}
+
+.word-te {
+  font-family: "Noto Serif Telugu", var(--font-word);
+}
+
+.word-ta {
+  font-family: "Noto Serif Tamil", var(--font-word);
+}
+
+.word-ml {
+  font-family: "Noto Serif Malayalam", var(--font-word);
 }
 
 .word-en {
