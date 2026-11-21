@@ -19,7 +19,7 @@ Teachers create their own account (email + password) and must sign in to use the
 Accounts need a real Postgres database. In the Vercel project settings:
 
 1. **Storage → Connect Database → Neon (free)** and link it to the project. This adds `DATABASE_URL`. The account tables are created automatically on the next build (`migrations/0001_auth.sql`).
-2. **Settings → Environment Variables**, add `BETTER_AUTH_SECRET` = a long random string (for example the output of `openssl rand -hex 32`). Keep it secret and never change it after launch, or everyone is signed out.
+2. Optional: `BETTER_AUTH_SECRET` = a long random string. If unset, a stable secret is derived from `DATABASE_URL`, so this step can be skipped.
 3. Optional: `BETTER_AUTH_URL` = your public address (e.g. `https://roar-ka.vercel.app`). If unset, the Vercel production domain is used.
 4. Redeploy.
 
