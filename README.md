@@ -16,7 +16,7 @@ Teachers create their own account (email + password) and must sign in to use the
 
 ## Deploying with sign-in (Vercel)
 
-Accounts need a real Postgres database. In the Vercel project settings:
+Accounts need a real Postgres database. ROAR-KA uses the free Neon database **roar-ka-db** (region iad1, Washington D.C., same as the Vercel functions), connected to Production and Preview as `DATABASE_URL`. To set this up again in a new Vercel project:
 
 1. **Storage → Connect Database → Neon (free)** and link it to the project. This adds `DATABASE_URL`. The account tables are created automatically on the next build (`migrations/0001_auth.sql`).
 2. Optional: `BETTER_AUTH_SECRET` = a long random string. If unset, a stable secret is derived from `DATABASE_URL`, so this step can be skipped.
