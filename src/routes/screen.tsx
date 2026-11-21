@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input, Label, Select } from "@/components/ui/input";
 import { PageHero } from "@/components/ribbons";
-import { KARNATAKA_DISTRICTS, HOME_LANGUAGES } from "@/lib/districts";
+import { KARNATAKA_DISTRICTS, HOME_LANGUAGES, placeLabel } from "@/lib/districts";
 import { t } from "@/lib/i18n";
 import { useApp } from "@/lib/store";
 import type { Grade, Lang, SchoolType, ScreeningSession, Sex } from "@/lib/types";
-import { PROTOCOL_VERSION } from "@/lib/types";
+import { LANGS, PROTOCOL_VERSION } from "@/lib/types";
 import { uid } from "@/lib/utils";
 
 export const Route = createFileRoute("/screen")({ component: ScreenForm });
@@ -108,7 +108,7 @@ function ScreenForm() {
             >
               {KARNATAKA_DISTRICTS.map((d) => (
                 <option key={d.id} value={d.id}>
-                  {d[uiLang]}
+                  {placeLabel(d, uiLang)}
                 </option>
               ))}
             </Select>
@@ -182,7 +182,7 @@ function ScreenForm() {
             <Select id="hl" value={homeLanguage} onChange={(e) => setHomeLanguage(e.target.value)}>
               {HOME_LANGUAGES.map((h) => (
                 <option key={h.id} value={h.id}>
-                  {h[uiLang]}
+                  {placeLabel(h, uiLang)}
                 </option>
               ))}
             </Select>
@@ -194,7 +194,7 @@ function ScreenForm() {
               value={medium}
               onChange={(e) => setMedium(e.target.value as Lang | "other")}
             >
-              {(["kn", "en", "hi", "other"] as const).map((k) => (
+              {([...LANGS, "other"] as const).map((k) => (
                 <option key={k} value={k}>
                   {t(uiLang, `lang.${k}`)}
                 </option>
@@ -204,7 +204,7 @@ function ScreenForm() {
           <div className="sm:col-span-2">
             <Label htmlFor="tl">{t(uiLang, "screen.testLang")}</Label>
             <Select id="tl" value={testLang} onChange={(e) => setTestLang(e.target.value as Lang)}>
-              {(["kn", "en", "hi"] as const).map((k) => (
+              {LANGS.map((k) => (
                 <option key={k} value={k}>
                   {t(uiLang, `lang.${k}`)}
                 </option>

@@ -1,8 +1,9 @@
 /**
  * Self-hosted Better Auth for THIS app (server-only).
  *
- * Pre-wired for live preview + deploy — do not rewrite this file. To enable
- * local email/password, flip the flag in `./email-password` only (see auth skill).
+ * Originally the Grok app-builder template. ROAR-KA changes: email/password on
+ * (`./email-password`), no broker providers (`./providers`), and the Vercel
+ * production domain is used as the base URL when BETTER_AUTH_URL is unset.
  *
  * The app runs its own Better Auth at `/api/auth/*`, so the session cookie stays
  * on this app's own origin. Sign-in federates to the shared **Grok auth broker**
@@ -33,7 +34,7 @@ import { betterAuth } from "better-auth";
 import { bearer, genericOAuth } from "better-auth/plugins";
 import { tanstackStartCookies } from "better-auth/tanstack-start";
 import { getCookie } from "@tanstack/react-start/server";
-import { randomBytes } from "node:crypto";
+import { createHash, randomBytes } from "node:crypto";
 import { Pool } from "pg";
 import { ensureDbReady, getPglite } from "../db";
 import { emailAndPasswordEnabled } from "./email-password";
@@ -64,6 +65,19 @@ function previewAuthSecret(): string {
   return globalAuthRef.__grokAuthPreviewSecret__;
 }
 
+/**
+ * When BETTER_AUTH_SECRET is not set but a database is, derive a stable signing
+ * secret from DATABASE_URL (itself a server-only secret). Every server instance
+ * then agrees on the same secret without anyone hand-creating one. Setting
+ * BETTER_AUTH_SECRET explicitly still takes priority; changing the database URL
+ * signs everyone out (they just log in again).
+ */
+function derivedSecret(): string | undefined {
+  const url = process.env.DATABASE_URL?.trim();
+  if (!url) return undefined;
+  return createHash("sha256").update(`roar-ka-auth:${url}`).digest("hex");
+}
+
 /** Read an env var, treating empty/whitespace as unset. */
 const env = (key: string): string | undefined => {
   const value = process.env[key]?.trim();
@@ -91,7 +105,17 @@ export const authConfigured =
 // it derives the origin per-request from the (proxied) host, validated against the
 // preview allowlist, which makes the OAuth `redirect_uri` the concrete preview URL
 // the broker's preview client accepts.
-const explicitBaseURL = env("BETTER_AUTH_URL");
+// On Vercel, fall back to the project's production domain (Vercel sets
+// VERCEL_PROJECT_PRODUCTION_URL, e.g. "roar-ka.vercel.app") so sign-in works
+// without a hand-set BETTER_AUTH_URL.
+const vercelProductionHost = env("VERCEL_PROJECT_PRODUCTION_URL");
+const explicitBaseURL =
+  env("BETTER_AUTH_URL") ??
+  (vercelProductionHost ? `https://${vercelProductionHost}` : undefined);
+// Per-deployment Vercel URLs (previews, branch URLs) must pass the origin check too.
+const vercelExtraOrigins: string[] = [env("VERCEL_URL"), env("VERCEL_BRANCH_URL")]
+  .filter((h): h is string => Boolean(h))
+  .map((h) => `https://${h}`);
 // Explicit `string[]` (not a readonly tuple) — Better Auth's DynamicBaseURLConfig
 // requires a mutable `allowedHosts: string[]`.
 const previewAllowedHosts: string[] = [...PREVIEW_ALLOWED_HOSTS];
@@ -116,7 +140,7 @@ const baseURL = explicitBaseURL ?? {
 // Origins Better Auth accepts on credentialed POSTs (sign-up/sign-in, etc.).
 // Missing entries here surface as FORBIDDEN "Invalid origin".
 const trustedOrigins: string[] = explicitBaseURL
-  ? [explicitBaseURL, ...LOCAL_DEV_ORIGINS]
+  ? [explicitBaseURL, ...vercelExtraOrigins, ...LOCAL_DEV_ORIGINS]
   : [
       // Host wildcards (matched against Origin's host)
       ...previewAllowedHosts,
@@ -176,7 +200,7 @@ export const auth = betterAuth({
   baseURL,
   // Deployed apps inject BETTER_AUTH_SECRET. Preview: process-stable secret on
   // globalThis so HMR doesn't invalidate PGLite-backed sessions (see above).
-  secret: env("BETTER_AUTH_SECRET") ?? previewAuthSecret(),
+  secret: env("BETTER_AUTH_SECRET") ?? derivedSecret() ?? previewAuthSecret(),
   database,
 
   // CSRF / origin check for credentialed auth POSTs (email sign-up/sign-in, …).
@@ -211,7 +235,9 @@ export const auth = betterAuth({
   session: { cookieCache: { enabled: true, maxAge: 300 } },
 
   // Local email/password — toggled only via `./email-password` (not a plugin).
-  ...(emailAndPasswordEnabled ? { emailAndPassword: { enabled: true } } : {}),
+  ...(emailAndPasswordEnabled
+    ? { emailAndPassword: { enabled: true, minPasswordLength: 8, autoSignIn: true } }
+    : {}),
 
   // `__Host-` prefixed cookies: the browser REFUSES any same-named cookie that
   // carries a `Domain` attribute, so a sibling `*.grok.me` app cannot "toss" a

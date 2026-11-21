@@ -33,15 +33,72 @@ export const KARNATAKA_DISTRICTS = [
 ] as const;
 
 export const HOME_LANGUAGES = [
-  { id: "kannada", en: "Kannada", kn: "ಕನ್ನಡ", hi: "कन्नड़" },
-  { id: "tulu", en: "Tulu", kn: "ತುಳು", hi: "तुलु" },
-  { id: "kodava", en: "Kodava", kn: "ಕೊಡವ", hi: "कोडावा" },
-  { id: "konkani", en: "Konkani", kn: "ಕೊಂಕಣಿ", hi: "कोंकणी" },
-  { id: "urdu", en: "Urdu", kn: "ಉರ್ದು", hi: "उर्दू" },
-  { id: "telugu", en: "Telugu", kn: "ತೆಲುಗು", hi: "तेलुगु" },
-  { id: "tamil", en: "Tamil", kn: "ತಮಿಳು", hi: "तमिल" },
-  { id: "marathi", en: "Marathi", kn: "ಮರಾಠಿ", hi: "मराठी" },
-  { id: "hindi", en: "Hindi", kn: "ಹಿಂದಿ", hi: "हिन्दी" },
-  { id: "english", en: "English", kn: "ಇಂಗ್ಲಿಷ್", hi: "अंग्रेज़ी" },
-  { id: "other", en: "Other", kn: "ಇತರೆ", hi: "अन्य" },
+  {
+    id: "kannada",
+    en: "Kannada",
+    kn: "ಕನ್ನಡ",
+    hi: "कन्नड़",
+    te: "కన్నడ",
+    ta: "கன்னடம்",
+    ml: "കന്നഡ",
+  },
+  { id: "tulu", en: "Tulu", kn: "ತುಳು", hi: "तुलु", te: "తుళు", ta: "துளு", ml: "തുളു" },
+  { id: "kodava", en: "Kodava", kn: "ಕೊಡವ", hi: "कोडावा", te: "కొడవ", ta: "கொடவா", ml: "കൊടവ" },
+  {
+    id: "konkani",
+    en: "Konkani",
+    kn: "ಕೊಂಕಣಿ",
+    hi: "कोंकणी",
+    te: "కొంకణి",
+    ta: "கொங்கணி",
+    ml: "കൊങ്കണി",
+  },
+  { id: "urdu", en: "Urdu", kn: "ಉರ್ದು", hi: "उर्दू", te: "ఉర్దూ", ta: "உருது", ml: "ഉർദു" },
+  {
+    id: "telugu",
+    en: "Telugu",
+    kn: "ತೆಲುಗು",
+    hi: "तेलुगु",
+    te: "తెలుగు",
+    ta: "தெலுங்கு",
+    ml: "തെലുങ്ക്",
+  },
+  { id: "tamil", en: "Tamil", kn: "ತಮಿಳು", hi: "तमिल", te: "తమిళం", ta: "தமிழ்", ml: "തമിഴ്" },
+  {
+    id: "malayalam",
+    en: "Malayalam",
+    kn: "ಮಲಯಾಳಂ",
+    hi: "मलयालम",
+    te: "మలయాళం",
+    ta: "மலையாளம்",
+    ml: "മലയാളം",
+  },
+  {
+    id: "marathi",
+    en: "Marathi",
+    kn: "ಮರಾಠಿ",
+    hi: "मराठी",
+    te: "మరాఠీ",
+    ta: "மராத்தி",
+    ml: "മറാഠി",
+  },
+  { id: "hindi", en: "Hindi", kn: "ಹಿಂದಿ", hi: "हिन्दी", te: "హిందీ", ta: "இந்தி", ml: "ഹിന്ദി" },
+  {
+    id: "english",
+    en: "English",
+    kn: "ಇಂಗ್ಲಿಷ್",
+    hi: "अंग्रेज़ी",
+    te: "ఇంగ్లీష్",
+    ta: "ஆங்கிலம்",
+    ml: "ഇംഗ്ലീഷ്",
+  },
+  { id: "other", en: "Other", kn: "ಇತರೆ", hi: "अन्य", te: "ఇతర", ta: "மற்றவை", ml: "മറ്റുള്ളവ" },
 ] as const;
+
+/** Label for a district or home language in the UI language (English when no translation). */
+export function placeLabel(
+  entry: { en: string } & Partial<Record<string, string>>,
+  lang: string,
+): string {
+  return entry[lang] ?? entry.en;
+}

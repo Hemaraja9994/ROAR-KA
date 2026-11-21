@@ -1,4 +1,7 @@
 import type { Lang } from "./types";
+import { te } from "./i18n-te";
+import { ta } from "./i18n-ta";
+import { ml } from "./i18n-ml";
 
 const en = {
   "app.name": "ROAR-KA",
@@ -10,10 +13,9 @@ const en = {
   "nav.protocol": "How to give",
   "nav.about": "Credits",
   "nav.interpret": "Interpret",
-  "home.kicker": "Kannada · English · Hindi",
+  "home.kicker": "Kannada · English · Hindi · Telugu · Tamil · Malayalam",
   "home.title": "Spot word-reading difficulty in a few minutes.",
-  "home.lead":
-    "A classroom screening tool for Karnataka teachers. The child looks at a word and taps Real or Made-up. The test adapts, like the original ROAR-CAT frame from Stanford’s Yeatman Lab.",
+  "home.lead": "A classroom screening tool for Karnataka teachers, with word lists in six languages. The child looks at a word and taps Real or Made-up. The test adapts, like the original ROAR-CAT frame from Stanford’s Yeatman Lab.",
   "home.cta": "Start a screening",
   "home.demo": "Try a demo",
   "home.for": "Who it is for",
@@ -36,7 +38,7 @@ const en = {
   "home.interpretCta": "How to read a result",
   "home.flagTitle": "Three classroom flags",
   "home.min": "About 3 minutes",
-  "home.langs": "Three languages",
+  "home.langs": "Six languages",
   "home.device": "Stays on this device",
   "screen.title": "New screening",
   "screen.lead": "Fill teacher and child details, then hand the screen to the child.",
@@ -70,6 +72,9 @@ const en = {
   "lang.en": "English",
   "lang.kn": "Kannada",
   "lang.hi": "Hindi",
+  "lang.te": "Telugu",
+  "lang.ta": "Tamil",
+  "lang.ml": "Malayalam",
   "lang.other": "Other",
   "grade.lkg": "LKG",
   "grade.ukg": "UKG",
@@ -117,8 +122,7 @@ const en = {
   "results.print": "Print report",
   "results.export": "Export this child",
   "results.again": "New screening",
-  "results.disclaimer":
-    "Pilot tool. Kannada and Hindi items are newly written and not yet locally normed. Bands are provisional pending a local validation sample. Not official Stanford ROAR.",
+  "results.disclaimer": "Pilot tool. Kannada and Hindi items are newly written; Telugu, Tamil and Malayalam items are provisional drafts awaiting native-speaker review. None are locally normed yet. Bands are provisional pending a local validation sample. Not official Stanford ROAR.",
   "results.thetaNote":
     "θ is an IRT ability score (about −3 to +3). Higher means stronger silent word recognition. SE is the standard error — smaller is more precise.",
   "results.means": "What this means",
@@ -189,7 +193,8 @@ const en = {
   "interpret.row3": "Screen + history of struggle",
   "interpret.shortTypical": "Typical",
   "interpret.shortWatch": "Watch",
-  "interpret.shortRefer": "Refer",  "records.title": "Records on this device",
+  "interpret.shortRefer": "Refer",
+  "records.title": "Records on this device",
   "records.empty": "No screenings saved yet.",
   "records.export": "Export CSV",
   "records.clear": "Clear all",
@@ -229,12 +234,31 @@ const en = {
   "about.jscat":
     "jsCAT library: Wanjing Anya Ma, Emily Judith Arteaga Garcia, Jason D. Yeatman, Adam Richie-Halford — yeatmanlab/jsCAT (MIT).",
   "about.ka": "This Karnataka adaptation",
-  "about.kaBody":
-    "Kannada, English and Hindi item banks, teacher workflow, and Kannada/Hindi interface were written for a research pilot and clinical conference in Bengaluru. Intended for school screening of children with possible learning issues, then for wider Karnataka use, including pathways such as Sarva Shiksha Abhiyan — pending validation and government review.",
-  "about.notOfficial":
-    "This is not the official Stanford ROAR product. English items here are original parallels, not the copyrighted ROAR item bank. Kannada and Hindi banks are new and must be validated before high-stakes use.",
-  "about.privacy":
-    "No sign-in. Records live only in this browser. Export is teacher-initiated. Do not put full addresses or medical file numbers in the child code.",
+  "about.kaBody": "Kannada, English and Hindi item banks, teacher workflow, and the regional-language interface were written for a research pilot and clinical conference in Bengaluru. Telugu, Tamil and Malayalam banks were added as provisional drafts for children in border districts and linguistic-minority schools. Intended for school screening of children with possible learning issues, then for wider Karnataka use, including pathways such as Sarva Shiksha Abhiyan — pending validation and government review.",
+  "about.notOfficial": "This is not the official Stanford ROAR product. English items here are original parallels, not the copyrighted ROAR item bank. Kannada and Hindi banks are new; Telugu, Tamil and Malayalam banks are provisional drafts. All must be validated before high-stakes use.",
+  "about.privacy": "Teachers sign in with their own account. The account holds only the teacher’s name, email and password. Screening records still live only in this browser, and export is teacher-initiated. Do not put full addresses or medical file numbers in the child code.",
+  "auth.loginTitle": "Teacher sign in",
+  "auth.loginLead": "Sign in to use ROAR-KA. Screening records still stay on this device.",
+  "auth.signupTitle": "Create a teacher account",
+  "auth.signupLead": "One account for each teacher. Your email is your username.",
+  "auth.name": "Full name",
+  "auth.email": "Email (your username)",
+  "auth.password": "Password",
+  "auth.password2": "Confirm password",
+  "auth.passwordHint": "At least 8 characters.",
+  "auth.signIn": "Sign in",
+  "auth.signUp": "Create account",
+  "auth.toSignup": "New teacher? Create an account",
+  "auth.toLogin": "Already have an account? Sign in",
+  "auth.signOut": "Sign out",
+  "auth.working": "Please wait…",
+  "auth.loading": "Loading…",
+  "auth.errMismatch": "The two passwords do not match.",
+  "auth.errShort": "Password must be at least 8 characters.",
+  "auth.errFields": "Please fill every field.",
+  "auth.errLogin": "Email or password is not correct.",
+  "auth.errSignup": "Could not create the account. This email may already be registered.",
+  "auth.noDb": "Setup note for the admin: no database is connected, so accounts are temporary and may disappear. Connect a database before the pilot.",
   "common.back": "Back",
   "common.cancel": "Cancel",
   "common.continue": "Continue",
@@ -242,10 +266,10 @@ const en = {
   "common.of": "of",
   "common.demoChild": "Demo child",
   "footer.team":
-    "Concept and design: Hemaraja Nayaka. S · Mr. Sumanth AV · Ms. Spoorthi · Ms. Apoorva · Ms. Jeevitha · Ms. Rashmi · Ms. Bandhavya",
+    "Concept and design: Hemaraja Nayaka. S · Dr. Amoolya G · Mr. Sumanth AV · Ms. Spoorthi · Ms. Apoorva · Ms. Jeevitha · Ms. Rashmi · Ms. Bandhavya",
 } as const;
 
-type Key = keyof typeof en;
+export type Key = keyof typeof en;
 
 const kn: Record<Key, string> = {
   "app.name": "ROAR-KA",
@@ -257,10 +281,9 @@ const kn: Record<Key, string> = {
   "nav.protocol": "ಹೇಗೆ ನಡೆಸುವುದು",
   "nav.about": "ಮಾನ್ಯತೆ",
   "nav.interpret": "ಅರ್ಥ",
-  "home.kicker": "ಕನ್ನಡ · ಇಂಗ್ಲಿಷ್ · ಹಿಂದಿ",
+  "home.kicker": "ಕನ್ನಡ · ಇಂಗ್ಲಿಷ್ · ಹಿಂದಿ · ತೆಲುಗು · ತಮಿಳು · ಮಲಯಾಳಂ",
   "home.title": "ಪದ ಓದುವ ತೊಂದರೆಯನ್ನು ಕೆಲವು ನಿಮಿಷಗಳಲ್ಲಿ ಗುರುತಿಸಿ.",
-  "home.lead":
-    "ಕರ್ನಾಟಕದ ಶಿಕ್ಷಕರಿಗಾಗಿ ತರಗತಿ ಪರೀಕ್ಷೆ. ಮಗು ಪದವನ್ನು ನೋಡಿ «ನಿಜ» ಅಥವಾ «ಕಲ್ಪಿತ» ಒತ್ತುತ್ತದೆ. ಮೂಲ ROAR-CAT ಚೌಕಟ್ಟಿನಂತೆ ಪರೀಕ್ಷೆ ಹೊಂದಿಕೊಳ್ಳುತ್ತದೆ.",
+  "home.lead": "ಕರ್ನಾಟಕದ ಶಿಕ್ಷಕರಿಗಾಗಿ ಆರು ಭಾಷೆಗಳ ಪದಪಟ್ಟಿಯೊಂದಿಗೆ ತರಗತಿ ಪರೀಕ್ಷೆ. ಮಗು ಪದವನ್ನು ನೋಡಿ «ನಿಜ» ಅಥವಾ «ಕಲ್ಪಿತ» ಒತ್ತುತ್ತದೆ. ಮೂಲ ROAR-CAT ಚೌಕಟ್ಟಿನಂತೆ ಪರೀಕ್ಷೆ ಹೊಂದಿಕೊಳ್ಳುತ್ತದೆ.",
   "home.cta": "ಪರೀಕ್ಷೆ ಪ್ರಾರಂಭಿಸಿ",
   "home.demo": "ಮಾದರಿ ನೋಡಿ",
   "home.for": "ಯಾರಿಗಾಗಿ",
@@ -282,7 +305,7 @@ const kn: Record<Key, string> = {
   "home.interpretCta": "ಫಲಿತಾಂಶವನ್ನು ಹೇಗೆ ಓದುವುದು",
   "home.flagTitle": "ಮೂರು ತರಗತಿ ಸೂಚನೆಗಳು",
   "home.min": "ಸುಮಾರು ೩ ನಿಮಿಷ",
-  "home.langs": "ಮೂರು ಭಾಷೆಗಳು",
+  "home.langs": "ಆರು ಭಾಷೆಗಳು",
   "home.device": "ಈ ಸಾಧನದಲ್ಲಿಯೇ",
   "screen.title": "ಹೊಸ ಪರೀಕ್ಷೆ",
   "screen.lead": "ಶಿಕ್ಷಕ ಮತ್ತು ಮಗುವಿನ ವಿವರ ತುಂಬಿ, ನಂತರ ತೆರೆಯನ್ನು ಮಗುವಿಗೆ ನೀಡಿ.",
@@ -316,6 +339,9 @@ const kn: Record<Key, string> = {
   "lang.en": "ಇಂಗ್ಲಿಷ್",
   "lang.kn": "ಕನ್ನಡ",
   "lang.hi": "ಹಿಂದಿ",
+  "lang.te": "ತೆಲುಗು",
+  "lang.ta": "ತಮಿಳು",
+  "lang.ml": "ಮಲಯಾಳಂ",
   "lang.other": "ಇತರೆ",
   "grade.lkg": "ಎಲ್‌ಕೆಜಿ",
   "grade.ukg": "ಯುಕೆಜಿ",
@@ -362,8 +388,7 @@ const kn: Record<Key, string> = {
   "results.print": "ವರದಿ ಮುದ್ರಿಸಿ",
   "results.export": "ಈ ಮಗುವಿನ ದಾಖಲೆ",
   "results.again": "ಹೊಸ ಪರೀಕ್ಷೆ",
-  "results.disclaimer":
-    "ಪೈಲಟ್ ಸಾಧನ. ಕನ್ನಡ ಮತ್ತು ಹಿಂದಿ ಪದಗಳು ಹೊಸವು; ಸ್ಥಳೀಯ ಮಾನದಂಡ ಬಾಕಿ. ಸೂಚನೆಗಳು ತಾತ್ಕಾಲಿಕ. ಅಧಿಕೃತ Stanford ROAR ಅಲ್ಲ.",
+  "results.disclaimer": "ಪೈಲಟ್ ಸಾಧನ. ಕನ್ನಡ ಮತ್ತು ಹಿಂದಿ ಪದಗಳು ಹೊಸವು; ತೆಲುಗು, ತಮಿಳು, ಮಲಯಾಳಂ ಪದಗಳು ತಾತ್ಕಾಲಿಕ ಕರಡು — ಸ್ಥಳೀಯ ಭಾಷಿಕರ ಪರಿಶೀಲನೆ ಬಾಕಿ. ಸ್ಥಳೀಯ ಮಾನದಂಡ ಬಾಕಿ. ಅಧಿಕೃತ Stanford ROAR ಅಲ್ಲ.",
   "results.thetaNote":
     "θ ಎಂಬುದು ಸಾಮರ್ಥ್ಯ ಅಂಕ (−೩ ರಿಂದ +೩). ಹೆಚ್ಚಿದರೆ ಮೌನ ಪದ ಗುರುತಿಸುವಿಕೆ ಉತ್ತಮ. SE ಚಿಕ್ಕದಾದರೆ ನಿಖರ.",
   "results.means": "ಇದರ ಅರ್ಥ",
@@ -434,7 +459,8 @@ const kn: Record<Key, string> = {
   "interpret.row3": "ಪರೀಕ್ಷೆ + ಹಿಂದಿನ ತೊಂದರೆ",
   "interpret.shortTypical": "ಸಾಮಾನ್ಯ",
   "interpret.shortWatch": "ಗಮನಿಸಿ",
-  "interpret.shortRefer": "ಕಳುಹಿಸಿ",  "records.title": "ಈ ಸಾಧನದ ದಾಖಲೆಗಳು",
+  "interpret.shortRefer": "ಕಳುಹಿಸಿ",
+  "records.title": "ಈ ಸಾಧನದ ದಾಖಲೆಗಳು",
   "records.empty": "ಇನ್ನೂ ಪರೀಕ್ಷೆಗಳಿಲ್ಲ.",
   "records.export": "CSV ರಫ್ತು",
   "records.clear": "ಎಲ್ಲವನ್ನು ಅಳಿಸಿ",
@@ -471,12 +497,31 @@ const kn: Record<Key, string> = {
   "about.jscat":
     "jsCAT: Wanjing Anya Ma, Emily Judith Arteaga Garcia, Jason D. Yeatman, Adam Richie-Halford — yeatmanlab/jsCAT (MIT).",
   "about.ka": "ಈ ಕರ್ನಾಟಕ ರೂಪಾಂತರ",
-  "about.kaBody":
-    "ಕನ್ನಡ, ಇಂಗ್ಲಿಷ್, ಹಿಂದಿ ಪದಸಂಪುಟ ಮತ್ತು ಶಿಕ್ಷಕರ ಹರಿವು — ಬೆಂಗಳೂರಿನ ಸಂಶೋಧನಾ ಪೈಲಟ್ ಮತ್ತು ವೈದ್ಯಕೀಯ ಸಮ್ಮೇಳನಕ್ಕಾಗಿ. ಬೆಂಗಳೂರು ಶಾಲಾ ಪರೀಕ್ಷೆ, ನಂತರ ಸರ್ವ ಶಿಕ್ಷಣ ಅಭಿಯಾನದತ್ತ — ಮಾನ್ಯತೆ ಮತ್ತು ಸರ್ಕಾರಿ ಪರಿಶೀಲನೆ ಬಾಕಿ.",
-  "about.notOfficial":
-    "ಇದು ಅಧಿಕೃತ Stanford ROAR ಅಲ್ಲ. ಇಂಗ್ಲಿಷ್ ಪದಗಳು ಮೂಲ ROAR ಬ್ಯಾಂಕ್ ಅಲ್ಲ. ಕನ್ನಡ/ಹಿಂದಿ ಹೊಸವು; ಮಾನ್ಯತೆ ಅಗತ್ಯ.",
-  "about.privacy":
-    "ಲಾಗಿನ್ ಇಲ್ಲ. ದಾಖಲೆ ಈ ಬ್ರೌಸರ್‌ನಲ್ಲಿ ಮಾತ್ರ. ಮಗುವಿನ ಸಂಕೇತದಲ್ಲಿ ವಿಳಾಸ ಅಥವಾ ವೈದ್ಯಕೀಯ ಸಂಖ್ಯೆ ಹಾಕಬೇಡಿ.",
+  "about.kaBody": "ಕನ್ನಡ, ಇಂಗ್ಲಿಷ್, ಹಿಂದಿ ಪದಸಂಪುಟ ಮತ್ತು ಶಿಕ್ಷಕರ ಹರಿವು — ಬೆಂಗಳೂರಿನ ಸಂಶೋಧನಾ ಪೈಲಟ್ ಮತ್ತು ವೈದ್ಯಕೀಯ ಸಮ್ಮೇಳನಕ್ಕಾಗಿ. ಗಡಿ ಜಿಲ್ಲೆಗಳು ಮತ್ತು ಭಾಷಾ ಅಲ್ಪಸಂಖ್ಯಾತ ಶಾಲೆಗಳಿಗಾಗಿ ತೆಲುಗು, ತಮಿಳು, ಮಲಯಾಳಂ ಪದಸಂಪುಟಗಳನ್ನು ತಾತ್ಕಾಲಿಕವಾಗಿ ಸೇರಿಸಲಾಗಿದೆ. ನಂತರ ಸರ್ವ ಶಿಕ್ಷಣ ಅಭಿಯಾನದತ್ತ — ಮಾನ್ಯತೆ ಮತ್ತು ಸರ್ಕಾರಿ ಪರಿಶೀಲನೆ ಬಾಕಿ.",
+  "about.notOfficial": "ಇದು ಅಧಿಕೃತ Stanford ROAR ಅಲ್ಲ. ಇಂಗ್ಲಿಷ್ ಪದಗಳು ಮೂಲ ROAR ಬ್ಯಾಂಕ್ ಅಲ್ಲ. ಕನ್ನಡ/ಹಿಂದಿ ಹೊಸವು; ತೆಲುಗು/ತಮಿಳು/ಮಲಯಾಳಂ ತಾತ್ಕಾಲಿಕ ಕರಡು. ಎಲ್ಲಕ್ಕೂ ಮಾನ್ಯತೆ ಅಗತ್ಯ.",
+  "about.privacy": "ಶಿಕ್ಷಕರು ತಮ್ಮದೇ ಖಾತೆಯಿಂದ ಲಾಗಿನ್ ಆಗುತ್ತಾರೆ. ಖಾತೆಯಲ್ಲಿ ಹೆಸರು, ಇಮೇಲ್, ಪಾಸ್‌ವರ್ಡ್ ಮಾತ್ರ. ಪರೀಕ್ಷಾ ದಾಖಲೆ ಈ ಬ್ರೌಸರ್‌ನಲ್ಲಿ ಮಾತ್ರ. ಮಗುವಿನ ಸಂಕೇತದಲ್ಲಿ ವಿಳಾಸ ಅಥವಾ ವೈದ್ಯಕೀಯ ಸಂಖ್ಯೆ ಹಾಕಬೇಡಿ.",
+  "auth.loginTitle": "ಶಿಕ್ಷಕರ ಲಾಗಿನ್",
+  "auth.loginLead": "ROAR-KA ಬಳಸಲು ಲಾಗಿನ್ ಆಗಿ. ಪರೀಕ್ಷಾ ದಾಖಲೆಗಳು ಈ ಸಾಧನದಲ್ಲಿಯೇ ಉಳಿಯುತ್ತವೆ.",
+  "auth.signupTitle": "ಶಿಕ್ಷಕರ ಖಾತೆ ರಚಿಸಿ",
+  "auth.signupLead": "ಪ್ರತಿ ಶಿಕ್ಷಕರಿಗೆ ಒಂದು ಖಾತೆ. ನಿಮ್ಮ ಇಮೇಲ್ ನಿಮ್ಮ ಬಳಕೆದಾರ ಹೆಸರು.",
+  "auth.name": "ಪೂರ್ಣ ಹೆಸರು",
+  "auth.email": "ಇಮೇಲ್ (ಬಳಕೆದಾರ ಹೆಸರು)",
+  "auth.password": "ಪಾಸ್‌ವರ್ಡ್",
+  "auth.password2": "ಪಾಸ್‌ವರ್ಡ್ ದೃಢೀಕರಿಸಿ",
+  "auth.passwordHint": "ಕನಿಷ್ಠ 8 ಅಕ್ಷರಗಳು.",
+  "auth.signIn": "ಲಾಗಿನ್",
+  "auth.signUp": "ಖಾತೆ ರಚಿಸಿ",
+  "auth.toSignup": "ಹೊಸ ಶಿಕ್ಷಕರೇ? ಖಾತೆ ರಚಿಸಿ",
+  "auth.toLogin": "ಈಗಾಗಲೇ ಖಾತೆ ಇದೆಯೇ? ಲಾಗಿನ್ ಆಗಿ",
+  "auth.signOut": "ಲಾಗ್ ಔಟ್",
+  "auth.working": "ದಯವಿಟ್ಟು ಕಾಯಿರಿ…",
+  "auth.loading": "ಲೋಡ್ ಆಗುತ್ತಿದೆ…",
+  "auth.errMismatch": "ಎರಡು ಪಾಸ್‌ವರ್ಡ್‌ಗಳು ಹೊಂದುತ್ತಿಲ್ಲ.",
+  "auth.errShort": "ಪಾಸ್‌ವರ್ಡ್ ಕನಿಷ್ಠ 8 ಅಕ್ಷರಗಳಿರಬೇಕು.",
+  "auth.errFields": "ಎಲ್ಲಾ ವಿವರಗಳನ್ನು ತುಂಬಿ.",
+  "auth.errLogin": "ಇಮೇಲ್ ಅಥವಾ ಪಾಸ್‌ವರ್ಡ್ ಸರಿಯಿಲ್ಲ.",
+  "auth.errSignup": "ಖಾತೆ ರಚಿಸಲಾಗಲಿಲ್ಲ. ಈ ಇಮೇಲ್ ಈಗಾಗಲೇ ನೋಂದಣಿಯಾಗಿರಬಹುದು.",
+  "auth.noDb": "ನಿರ್ವಾಹಕರಿಗೆ ಸೂಚನೆ: ಡೇಟಾಬೇಸ್ ಸಂಪರ್ಕವಿಲ್ಲ; ಖಾತೆಗಳು ತಾತ್ಕಾಲಿಕ. ಪೈಲಟ್‌ಗೆ ಮೊದಲು ಡೇಟಾಬೇಸ್ ಸಂಪರ್ಕಿಸಿ.",
   "common.back": "ಹಿಂದೆ",
   "common.cancel": "ರದ್ದು",
   "common.continue": "ಮುಂದೆ",
@@ -484,7 +529,7 @@ const kn: Record<Key, string> = {
   "common.of": "/",
   "common.demoChild": "ಮಾದರಿ ಮಗು",
   "footer.team":
-    "ಪರಿಕಲ್ಪನೆ ಮತ್ತು ವಿನ್ಯಾಸ: Hemaraja Nayaka. S · Mr. Sumanth AV · Ms. Spoorthi · Ms. Apoorva · Ms. Jeevitha · Ms. Rashmi · Ms. Bandhavya",
+    "ಪರಿಕಲ್ಪನೆ ಮತ್ತು ವಿನ್ಯಾಸ: Hemaraja Nayaka. S · Dr. Amoolya G · Mr. Sumanth AV · Ms. Spoorthi · Ms. Apoorva · Ms. Jeevitha · Ms. Rashmi · Ms. Bandhavya",
 };
 
 const hi: Record<Key, string> = {
@@ -497,10 +542,9 @@ const hi: Record<Key, string> = {
   "nav.protocol": "कैसे दें",
   "nav.about": "श्रेय",
   "nav.interpret": "अर्थ",
-  "home.kicker": "कन्नड़ · अंग्रेज़ी · हिन्दी",
+  "home.kicker": "कन्नड़ · अंग्रेज़ी · हिन्दी · तेलुगु · तमिल · मलयालम",
   "home.title": "शब्द-पठन की कठिनाई कुछ मिनटों में पहचानें।",
-  "home.lead":
-    "कर्नाटक के शिक्षकों के लिए कक्षा जाँच। बच्चा शब्द देखकर असली या बनावटी दबाता है। मूल ROAR-CAT ढाँचे की तरह परीक्षण अनुकूल होता है।",
+  "home.lead": "कर्नाटक के शिक्षकों के लिए छह भाषाओं की शब्द-सूची वाली कक्षा जाँच। बच्चा शब्द देखकर असली या बनावटी दबाता है। मूल ROAR-CAT ढाँचे की तरह परीक्षण अनुकूल होता है।",
   "home.cta": "जाँच शुरू करें",
   "home.demo": "डेमो आज़माएँ",
   "home.for": "किसके लिए",
@@ -522,7 +566,7 @@ const hi: Record<Key, string> = {
   "home.interpretCta": "परिणाम कैसे पढ़ें",
   "home.flagTitle": "तीन कक्षा संकेत",
   "home.min": "लगभग ३ मिनट",
-  "home.langs": "तीन भाषाएँ",
+  "home.langs": "छह भाषाएँ",
   "home.device": "इसी उपकरण पर",
   "screen.title": "नई जाँच",
   "screen.lead": "शिक्षक और बच्चे का विवरण भरें, फिर स्क्रीन बच्चे को दें।",
@@ -556,6 +600,9 @@ const hi: Record<Key, string> = {
   "lang.en": "अंग्रेज़ी",
   "lang.kn": "कन्नड़",
   "lang.hi": "हिन्दी",
+  "lang.te": "तेलुगु",
+  "lang.ta": "तमिल",
+  "lang.ml": "मलयालम",
   "lang.other": "अन्य",
   "grade.lkg": "एलकेजी",
   "grade.ukg": "यूकेजी",
@@ -602,8 +649,7 @@ const hi: Record<Key, string> = {
   "results.print": "रिपोर्ट छापें",
   "results.export": "इस बच्चे का निर्यात",
   "results.again": "नई जाँच",
-  "results.disclaimer":
-    "पायलट उपकरण। कन्नड़ और हिन्दी शब्द नए हैं; स्थानीय मानक बाकी। संकेत अस्थायी हैं। आधिकारिक Stanford ROAR नहीं।",
+  "results.disclaimer": "पायलट उपकरण। कन्नड़ और हिन्दी शब्द नए हैं; तेलुगु, तमिल, मलयालम शब्द अस्थायी मसौदा हैं — मातृभाषी समीक्षा बाकी। स्थानीय मानक बाकी। आधिकारिक Stanford ROAR नहीं।",
   "results.thetaNote":
     "θ क्षमता अंक है (लगभग −३ से +३)। अधिक मतलब मज़बूत मौन शब्द पहचान। SE छोटा हो तो अधिक सटीक।",
   "results.means": "इसका अर्थ",
@@ -674,7 +720,8 @@ const hi: Record<Key, string> = {
   "interpret.row3": "जाँच + पुरानी कठिनाई",
   "interpret.shortTypical": "सामान्य",
   "interpret.shortWatch": "निगरानी",
-  "interpret.shortRefer": "भेजें",  "records.title": "इस उपकरण के रिकॉर्ड",
+  "interpret.shortRefer": "भेजें",
+  "records.title": "इस उपकरण के रिकॉर्ड",
   "records.empty": "अभी कोई जाँच नहीं।",
   "records.export": "CSV निर्यात",
   "records.clear": "सब हटाएँ",
@@ -711,12 +758,31 @@ const hi: Record<Key, string> = {
   "about.jscat":
     "jsCAT: Wanjing Anya Ma, Emily Judith Arteaga Garcia, Jason D. Yeatman, Adam Richie-Halford — yeatmanlab/jsCAT (MIT)।",
   "about.ka": "यह कर्नाटक रूपांतर",
-  "about.kaBody":
-    "कन्नड़, अंग्रेज़ी, हिन्दी शब्द-भंडार और शिक्षक प्रवाह — बेंगलूरु शोध पायलट और क्लिनिकल कॉन्फ्रेंस के लिए। बेंगलूरु स्कूल जाँच, फिर सर्व शिक्षा अभियान — मान्यता और सरकारी समीक्षा शेष।",
-  "about.notOfficial":
-    "यह आधिकारिक Stanford ROAR नहीं है। अंग्रेज़ी शब्द मूल ROAR बैंक नहीं हैं। कन्नड़/हिन्दी नए हैं; मान्यता आवश्यक।",
-  "about.privacy":
-    "लॉगिन नहीं। रिकॉर्ड केवल इस ब्राउज़र में। बच्चे के कोड में पता या मेडिकल नंबर न लिखें।",
+  "about.kaBody": "कन्नड़, अंग्रेज़ी, हिन्दी शब्द-भंडार और शिक्षक प्रवाह — बेंगलूरु शोध पायलट और क्लिनिकल कॉन्फ्रेंस के लिए। सीमावर्ती ज़िलों और भाषाई अल्पसंख्यक स्कूलों के लिए तेलुगु, तमिल, मलयालम शब्द-भंडार अस्थायी रूप से जोड़े गए हैं। फिर सर्व शिक्षा अभियान — मान्यता और सरकारी समीक्षा शेष।",
+  "about.notOfficial": "यह आधिकारिक Stanford ROAR नहीं है। अंग्रेज़ी शब्द मूल ROAR बैंक नहीं हैं। कन्नड़/हिन्दी नए हैं; तेलुगु/तमिल/मलयालम अस्थायी मसौदा हैं। सभी की मान्यता आवश्यक।",
+  "about.privacy": "शिक्षक अपने खाते से लॉगिन करते हैं। खाते में केवल नाम, ईमेल और पासवर्ड। जाँच रिकॉर्ड केवल इस ब्राउज़र में। बच्चे के कोड में पता या मेडिकल नंबर न लिखें।",
+  "auth.loginTitle": "शिक्षक लॉगिन",
+  "auth.loginLead": "ROAR-KA उपयोग करने के लिए लॉगिन करें। जाँच रिकॉर्ड इसी उपकरण पर रहते हैं।",
+  "auth.signupTitle": "शिक्षक खाता बनाएँ",
+  "auth.signupLead": "हर शिक्षक का एक खाता। आपका ईमेल ही आपका यूज़रनेम है।",
+  "auth.name": "पूरा नाम",
+  "auth.email": "ईमेल (यूज़रनेम)",
+  "auth.password": "पासवर्ड",
+  "auth.password2": "पासवर्ड दोबारा लिखें",
+  "auth.passwordHint": "कम से कम 8 अक्षर।",
+  "auth.signIn": "लॉगिन",
+  "auth.signUp": "खाता बनाएँ",
+  "auth.toSignup": "नए शिक्षक? खाता बनाएँ",
+  "auth.toLogin": "पहले से खाता है? लॉगिन करें",
+  "auth.signOut": "लॉग आउट",
+  "auth.working": "कृपया प्रतीक्षा करें…",
+  "auth.loading": "लोड हो रहा है…",
+  "auth.errMismatch": "दोनों पासवर्ड मेल नहीं खाते।",
+  "auth.errShort": "पासवर्ड कम से कम 8 अक्षर का हो।",
+  "auth.errFields": "कृपया सभी जानकारी भरें।",
+  "auth.errLogin": "ईमेल या पासवर्ड सही नहीं है।",
+  "auth.errSignup": "खाता नहीं बन सका। यह ईमेल शायद पहले से पंजीकृत है।",
+  "auth.noDb": "एडमिन के लिए सूचना: डेटाबेस जुड़ा नहीं है, इसलिए खाते अस्थायी हैं। पायलट से पहले डेटाबेस जोड़ें।",
   "common.back": "वापस",
   "common.cancel": "रद्द",
   "common.continue": "आगे",
@@ -724,10 +790,10 @@ const hi: Record<Key, string> = {
   "common.of": "/",
   "common.demoChild": "डेमो बच्चा",
   "footer.team":
-    "अवधारणा और डिज़ाइन: Hemaraja Nayaka. S · Mr. Sumanth AV · Ms. Spoorthi · Ms. Apoorva · Ms. Jeevitha · Ms. Rashmi · Ms. Bandhavya",
+    "अवधारणा और डिज़ाइन: Hemaraja Nayaka. S · Dr. Amoolya G · Mr. Sumanth AV · Ms. Spoorthi · Ms. Apoorva · Ms. Jeevitha · Ms. Rashmi · Ms. Bandhavya",
 };
 
-const dict: Record<Lang, Record<Key, string>> = { en, kn, hi };
+const dict: Record<Lang, Record<Key, string>> = { en, kn, hi, te, ta, ml };
 
 export type Msg = Key;
 

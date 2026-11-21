@@ -1,5 +1,6 @@
 import { t } from "@/lib/i18n";
 import type { Item, Lang } from "@/lib/types";
+import { wordClass } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 export function WordTrial({
@@ -22,9 +23,7 @@ export function WordTrial({
           key={item.id}
           className={cn(
             "word-swap max-w-full text-center text-5xl font-medium leading-tight tracking-tight text-ink sm:text-6xl",
-            testLang === "kn" && "word-kn",
-            testLang === "hi" && "word-hi",
-            testLang === "en" && "word-en",
+            wordClass(testLang),
           )}
         >
           {item.text}
